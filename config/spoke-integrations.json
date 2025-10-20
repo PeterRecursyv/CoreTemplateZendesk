@@ -62,6 +62,126 @@
     "logo": "https://www.ninjaone.com/wp-content/uploads/2023/01/NinjaOne-Logo.svg",
     "categories": ["RMM", "Monitoring"],
     "available": true
+  },
+  {
+    "id": "atera",
+    "name": "Atera",
+    "description": "All-in-one RMM and PSA solution",
+    "logo": "https://www.atera.com/wp-content/uploads/2021/09/atera-logo.svg",
+    "categories": ["RMM", "PSA"],
+    "available": true
+  },
+  {
+    "id": "bmchelix",
+    "name": "BMC Helix",
+    "description": "Cloud-native service and operations management",
+    "logo": "https://www.bmc.com/content/dam/bmc/corporate/bmc-logo.svg",
+    "categories": ["ITSM", "AIOps"],
+    "available": true
+  },
+  {
+    "id": "dattormm",
+    "name": "Datto RMM",
+    "description": "Remote monitoring and management",
+    "logo": "https://www.datto.com/content/dam/datto/images/logos/datto-logo.svg",
+    "categories": ["RMM", "Security"],
+    "available": true
+  },
+  {
+    "id": "dynamics365",
+    "name": "Dynamics 365",
+    "description": "Business applications suite",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_365_%282022%29.svg",
+    "categories": ["CRM", "ERP"],
+    "available": true
+  },
+  {
+    "id": "freshdesk",
+    "name": "Freshdesk",
+    "description": "Modern customer support solution",
+    "logo": "https://logos-world.net/wp-content/uploads/2021/11/Freshdesk-Logo.png",
+    "categories": ["ITSM", "Helpdesk"],
+    "available": true
+  },
+  {
+    "id": "halo",
+    "name": "Halo",
+    "description": "Service desk and business management",
+    "logo": "https://halopsa.com/wp-content/uploads/2021/01/halo-logo.svg",
+    "categories": ["ITSM", "Service-Desk"],
+    "available": true
+  },
+  {
+    "id": "ivantineurons",
+    "name": "Ivanti Neurons",
+    "description": "AI-powered IT service and asset management platform",
+    "logo": "https://www.ivanti.com/themes/custom/ivanti/logo.svg",
+    "categories": ["ITSM", "AIOps", "Security"],
+    "available": true
+  },
+  {
+    "id": "kaseyabms",
+    "name": "Kaseya BMS",
+    "description": "Business management solution",
+    "logo": "https://www.kaseya.com/wp-content/uploads/2021/06/kaseya-logo.svg",
+    "categories": ["PSA", "ITSM"],
+    "available": true
+  },
+  {
+    "id": "manageengine",
+    "name": "ManageEngine",
+    "description": "Integrated IT management software",
+    "logo": "https://www.manageengine.com/images/manageengine-logo.svg",
+    "categories": ["ITSM", "Monitoring"],
+    "available": true
+  },
+  {
+    "id": "netsuite",
+    "name": "NetSuite",
+    "description": "Cloud-based enterprise resource planning (ERP)",
+    "logo": "https://www.netsuite.com/portal/assets/img/NetSuite-logo.svg",
+    "categories": ["ERP", "Finance", "Cloud"],
+    "available": true
+  },
+  {
+    "id": "solarwinds",
+    "name": "SolarWinds",
+    "description": "IT management and monitoring solutions",
+    "logo": "https://www.solarwinds.com/-/media/solarwinds/swdcv2/logos/solarwinds-logo.svg",
+    "categories": ["Monitoring", "Network"],
+    "available": true
+  },
+  {
+    "id": "symphony",
+    "name": "Symphony",
+    "description": "Integrated business management",
+    "logo": "https://symphonypsa.com/wp-content/uploads/2020/01/symphony-logo.svg",
+    "categories": ["PSA", "Project-Management"],
+    "available": true
+  },
+  {
+    "id": "syspro",
+    "name": "Syspro",
+    "description": "Enterprise resource planning",
+    "logo": "https://www.syspro.com/wp-content/uploads/2020/01/syspro-logo.svg",
+    "categories": ["ERP", "Manufacturing"],
+    "available": true
+  },
+  {
+    "id": "zendesk",
+    "name": "Zendesk",
+    "description": "Customer service and engagement platform",
+    "logo": "/assets/logos/zendesk-logo.png",
+    "categories": ["Support", "Customer-Service"],
+    "available": true
+  },
+  {
+    "id": "zoho",
+    "name": "Zoho",
+    "description": "Business and productivity suite",
+    "logo": "https://www.zoho.com/img/zoho-logo.svg",
+    "categories": ["CRM", "Productivity"],
+    "available": true
   }
 ]
 
