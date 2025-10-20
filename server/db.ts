@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, purchases, Purchase, InsertPurchase } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -85,4 +85,57 @@ export async function getUser(id: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+// Purchase flow queries
+export async function createPurchase(purchase: InsertPurchase): Promise<Purchase | undefined> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot create purchase: database not available");
+    return undefined;
+  }
+
+  try {
+    await db.insert(purchases).values(purchase);
+    const result = await db.select().from(purchases).where(eq(purchases.id, purchase.id)).limit(1);
+    return result.length > 0 ? result[0] : undefined;
+  } catch (error) {
+    console.error("[Database] Failed to create purchase:", error);
+    throw error;
+  }
+}
+
+export async function updatePurchase(id: string, updates: Partial<InsertPurchase>): Promise<void> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot update purchase: database not available");
+    return;
+  }
+
+  try {
+    await db.update(purchases).set(updates).where(eq(purchases.id, id));
+  } catch (error) {
+    console.error("[Database] Failed to update purchase:", error);
+    throw error;
+  }
+}
+
+export async function getPurchase(id: string): Promise<Purchase | undefined> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get purchase: database not available");
+    return undefined;
+  }
+
+  const result = await db.select().from(purchases).where(eq(purchases.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function getPurchaseByStripeSession(sessionId: string): Promise<Purchase | undefined> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get purchase: database not available");
+    return undefined;
+  }
+
+  const result = await db.select().from(purchases).where(eq(purchases.stripeSessionId, sessionId)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}

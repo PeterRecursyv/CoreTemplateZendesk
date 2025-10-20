@@ -1,0 +1,20 @@
+{
+  "companyName": "Recursyv",
+  "logo": "/assets/logos/recursyv-logo.png",
+  "contactEmail": "info@recursyv.com",
+  "contactPhoneUK": "+44 118 380 0142",
+  "contactPhoneUS": "+1 833 749 3781",
+  "address": "Recursyv Limited, 400 Thames Valley Park Drive, Reading, RG6 1PT",
+  "aboutUs": "Recursyv provides fully managed ITSM integration services. We automatically synchronise systems with no coding knowledge or time-intensive mapping exercises. We build and manage your system integrations, enabling you to focus on serving your customers instead of moving data around, eliminating the 'Swivel Chair Interface' problem for your users and agents. Our highly rated team support hundreds of IT service providers globally, allowing you to benefit from our experience across all sizes of organisations and types of systems to get going quickly.",
+  "tagline": "Leaders in ITSM, Service Desk and Help Desk Integrations",
+  "colors": {
+    "primary": "#003366",
+    "accent": "#FF6B6B",
+    "background": "#F8F9FA"
+  },
+  "social": {
+    "twitter": "https://twitter.com/recursyv",
+    "linkedin": "https://linkedin.com/company/recursyv"
+  }
+}
+

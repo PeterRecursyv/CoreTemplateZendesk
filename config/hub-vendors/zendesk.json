@@ -1,0 +1,38 @@
+{
+  "id": "zendesk",
+  "name": "Zendesk",
+  "description": "Customer service and engagement platform",
+  "logo": "/assets/logos/zendesk-logo.png",
+  "categories": ["Support", "Customer-Service"],
+  "dataPoints": [
+    "GUID",
+    "Assigned Agents",
+    "Accounts / Companies",
+    "Contacts",
+    "Tickets",
+    "Ticket Notes",
+    "Ticket Attachments (Public and/or Private)",
+    "Assets (CMDB)",
+    "Time Entries",
+    "Contracts",
+    "UDFs (User Defined Fields)"
+  ],
+  "features": [
+    "Bidirectional sync",
+    "Real-time updates",
+    "Custom field mapping",
+    "Webhook support",
+    "Error-free data delivery"
+  ],
+  "spokeIntegrations": [
+    "servicenow",
+    "freshservice",
+    "jira",
+    "salesforce",
+    "hubspot",
+    "autotask",
+    "connectwise",
+    "ninjone"
+  ]
+}
+

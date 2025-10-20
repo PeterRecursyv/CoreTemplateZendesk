@@ -1,0 +1,67 @@
+[
+  {
+    "id": "servicenow",
+    "name": "ServiceNow",
+    "description": "Enterprise service management solution",
+    "logo": "https://logos-world.net/wp-content/uploads/2021/02/ServiceNow-Logo.png",
+    "categories": ["ITSM", "Enterprise"],
+    "available": true
+  },
+  {
+    "id": "freshservice",
+    "name": "Freshservice",
+    "description": "IT Service Management (ITSM) solution",
+    "logo": "https://logos-world.net/wp-content/uploads/2021/11/Freshservice-Logo.png",
+    "categories": ["ITSM", "Service-Desk"],
+    "available": true
+  },
+  {
+    "id": "jira",
+    "name": "Jira",
+    "description": "Project and issue tracking software",
+    "logo": "https://logos-world.net/wp-content/uploads/2021/02/Jira-Logo.png",
+    "categories": ["Project-Management", "Agile"],
+    "available": true
+  },
+  {
+    "id": "salesforce",
+    "name": "Salesforce",
+    "description": "CRM and customer success platform",
+    "logo": "https://logos-world.net/wp-content/uploads/2020/08/Salesforce-Logo.png",
+    "categories": ["CRM", "Sales"],
+    "available": true
+  },
+  {
+    "id": "hubspot",
+    "name": "HubSpot",
+    "description": "Inbound marketing and sales platform",
+    "logo": "https://logos-world.net/wp-content/uploads/2021/02/HubSpot-Logo.png",
+    "categories": ["CRM", "Marketing"],
+    "available": true
+  },
+  {
+    "id": "autotask",
+    "name": "Autotask",
+    "description": "Professional services automation",
+    "logo": "https://www.datto.com/content/dam/datto/images/logos/autotask-logo.svg",
+    "categories": ["PSA", "Project-Management"],
+    "available": true
+  },
+  {
+    "id": "connectwise",
+    "name": "ConnectWise",
+    "description": "Business automation platform",
+    "logo": "https://www.connectwise.com/globalassets/media/logos/company/brand/connectwise-master-logo-horizontal-full-color-rgb.svg",
+    "categories": ["PSA", "RMM"],
+    "available": true
+  },
+  {
+    "id": "ninjone",
+    "name": "NinjaOne",
+    "description": "Unified IT operations platform",
+    "logo": "https://www.ninjaone.com/wp-content/uploads/2023/01/NinjaOne-Logo.svg",
+    "categories": ["RMM", "Monitoring"],
+    "available": true
+  }
+]
+
