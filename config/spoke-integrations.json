@@ -3,7 +3,7 @@
     "id": "servicenow",
     "name": "ServiceNow",
     "description": "Enterprise service management solution",
-    "logo": "https://logos-world.net/wp-content/uploads/2021/02/ServiceNow-Logo.png",
+    "logo": "/assets/logos/servicenow.png",
     "categories": ["ITSM", "Enterprise"],
     "available": true
   },
@@ -11,7 +11,7 @@
     "id": "freshservice",
     "name": "Freshservice",
     "description": "IT Service Management (ITSM) solution",
-    "logo": "https://logos-world.net/wp-content/uploads/2021/11/Freshservice-Logo.png",
+    "logo": "/assets/logos/freshservice.png",
     "categories": ["ITSM", "Service-Desk"],
     "available": true
   },
@@ -19,7 +19,7 @@
     "id": "jira",
     "name": "Jira",
     "description": "Project and issue tracking software",
-    "logo": "https://logos-world.net/wp-content/uploads/2021/02/Jira-Logo.png",
+    "logo": "/assets/logos/jira.png",
     "categories": ["Project-Management", "Agile"],
     "available": true
   },
@@ -27,7 +27,7 @@
     "id": "salesforce",
     "name": "Salesforce",
     "description": "CRM and customer success platform",
-    "logo": "https://logos-world.net/wp-content/uploads/2020/08/Salesforce-Logo.png",
+    "logo": "/assets/logos/salesforce.png",
     "categories": ["CRM", "Sales"],
     "available": true
   },
@@ -35,7 +35,7 @@
     "id": "hubspot",
     "name": "HubSpot",
     "description": "Inbound marketing and sales platform",
-    "logo": "https://logos-world.net/wp-content/uploads/2021/02/HubSpot-Logo.png",
+    "logo": "/assets/logos/hubspot.png",
     "categories": ["CRM", "Marketing"],
     "available": true
   },
@@ -43,7 +43,7 @@
     "id": "autotask",
     "name": "Autotask",
     "description": "Professional services automation",
-    "logo": "https://www.datto.com/content/dam/datto/images/logos/autotask-logo.svg",
+    "logo": "/assets/logos/autotask.png",
     "categories": ["PSA", "Project-Management"],
     "available": true
   },
@@ -51,7 +51,7 @@
     "id": "connectwise",
     "name": "ConnectWise",
     "description": "Business automation platform",
-    "logo": "https://www.connectwise.com/globalassets/media/logos/company/brand/connectwise-master-logo-horizontal-full-color-rgb.svg",
+    "logo": "/assets/logos/connectwise.png",
     "categories": ["PSA", "RMM"],
     "available": true
   },
@@ -59,7 +59,7 @@
     "id": "ninjone",
     "name": "NinjaOne",
     "description": "Unified IT operations platform",
-    "logo": "https://www.ninjaone.com/wp-content/uploads/2023/01/NinjaOne-Logo.svg",
+    "logo": "/assets/logos/ninjone.png",
     "categories": ["RMM", "Monitoring"],
     "available": true
   },
@@ -67,7 +67,7 @@
     "id": "atera",
     "name": "Atera",
     "description": "All-in-one RMM and PSA solution",
-    "logo": "https://www.atera.com/wp-content/uploads/2021/09/atera-logo.svg",
+    "logo": "/assets/logos/atera.png",
     "categories": ["RMM", "PSA"],
     "available": true
   },
@@ -75,7 +75,7 @@
     "id": "bmchelix",
     "name": "BMC Helix",
     "description": "Cloud-native service and operations management",
-    "logo": "https://www.bmc.com/content/dam/bmc/corporate/bmc-logo.svg",
+    "logo": "/assets/logos/bmchelix.png",
     "categories": ["ITSM", "AIOps"],
     "available": true
   },
@@ -83,7 +83,7 @@
     "id": "dattormm",
     "name": "Datto RMM",
     "description": "Remote monitoring and management",
-    "logo": "https://www.datto.com/content/dam/datto/images/logos/datto-logo.svg",
+    "logo": "/assets/logos/dattormm.png",
     "categories": ["RMM", "Security"],
     "available": true
   },
@@ -91,7 +91,7 @@
     "id": "dynamics365",
     "name": "Dynamics 365",
     "description": "Business applications suite",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_365_%282022%29.svg",
+    "logo": "/assets/logos/dynamics365.png",
     "categories": ["CRM", "ERP"],
     "available": true
   },
@@ -99,7 +99,7 @@
     "id": "freshdesk",
     "name": "Freshdesk",
     "description": "Modern customer support solution",
-    "logo": "https://logos-world.net/wp-content/uploads/2021/11/Freshdesk-Logo.png",
+    "logo": "/assets/logos/freshdesk.png",
     "categories": ["ITSM", "Helpdesk"],
     "available": true
   },
@@ -107,7 +107,7 @@
     "id": "halo",
     "name": "Halo",
     "description": "Service desk and business management",
-    "logo": "https://halopsa.com/wp-content/uploads/2021/01/halo-logo.svg",
+    "logo": "/assets/logos/halo.png",
     "categories": ["ITSM", "Service-Desk"],
     "available": true
   },
@@ -115,7 +115,7 @@
     "id": "ivantineurons",
     "name": "Ivanti Neurons",
     "description": "AI-powered IT service and asset management platform",
-    "logo": "https://www.ivanti.com/themes/custom/ivanti/logo.svg",
+    "logo": "/assets/logos/ivantineurons.png",
     "categories": ["ITSM", "AIOps", "Security"],
     "available": true
   },
@@ -123,7 +123,7 @@
     "id": "kaseyabms",
     "name": "Kaseya BMS",
     "description": "Business management solution",
-    "logo": "https://www.kaseya.com/wp-content/uploads/2021/06/kaseya-logo.svg",
+    "logo": "/assets/logos/kaseyabms.png",
     "categories": ["PSA", "ITSM"],
     "available": true
   },
@@ -131,7 +131,7 @@
     "id": "manageengine",
     "name": "ManageEngine",
     "description": "Integrated IT management software",
-    "logo": "https://www.manageengine.com/images/manageengine-logo.svg",
+    "logo": "/assets/logos/manageengine.png",
     "categories": ["ITSM", "Monitoring"],
     "available": true
   },
@@ -139,7 +139,7 @@
     "id": "netsuite",
     "name": "NetSuite",
     "description": "Cloud-based enterprise resource planning (ERP)",
-    "logo": "https://www.netsuite.com/portal/assets/img/NetSuite-logo.svg",
+    "logo": "/assets/logos/netsuite.png",
     "categories": ["ERP", "Finance", "Cloud"],
     "available": true
   },
@@ -147,7 +147,7 @@
     "id": "solarwinds",
     "name": "SolarWinds",
     "description": "IT management and monitoring solutions",
-    "logo": "https://www.solarwinds.com/-/media/solarwinds/swdcv2/logos/solarwinds-logo.svg",
+    "logo": "/assets/logos/solarwinds.png",
     "categories": ["Monitoring", "Network"],
     "available": true
   },
@@ -155,7 +155,7 @@
     "id": "symphony",
     "name": "Symphony",
     "description": "Integrated business management",
-    "logo": "https://symphonypsa.com/wp-content/uploads/2020/01/symphony-logo.svg",
+    "logo": "/assets/logos/symphony.png",
     "categories": ["PSA", "Project-Management"],
     "available": true
   },
@@ -163,7 +163,7 @@
     "id": "syspro",
     "name": "Syspro",
     "description": "Enterprise resource planning",
-    "logo": "https://www.syspro.com/wp-content/uploads/2020/01/syspro-logo.svg",
+    "logo": "/assets/logos/syspro.png",
     "categories": ["ERP", "Manufacturing"],
     "available": true
   },
@@ -171,7 +171,7 @@
     "id": "zendesk",
     "name": "Zendesk",
     "description": "Customer service and engagement platform",
-    "logo": "/assets/logos/zendesk-logo.png",
+    "logo": "/assets/logos/zendesk.png",
     "categories": ["Support", "Customer-Service"],
     "available": true
   },
@@ -179,7 +179,7 @@
     "id": "zoho",
     "name": "Zoho",
     "description": "Business and productivity suite",
-    "logo": "https://www.zoho.com/img/zoho-logo.svg",
+    "logo": "/assets/logos/zoho.png",
     "categories": ["CRM", "Productivity"],
     "available": true
   }

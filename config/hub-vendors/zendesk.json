@@ -2,7 +2,7 @@
   "id": "zendesk",
   "name": "Zendesk",
   "description": "Customer service and engagement platform",
-  "logo": "/assets/logos/zendesk-logo.png",
+  "logo": "/assets/logos/zendesk.png",
   "categories": ["Support", "Customer-Service"],
   "dataPoints": [
     "GUID",
