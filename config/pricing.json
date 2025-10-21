@@ -1,6 +1,24 @@
 {
   "tiers": [
     {
+      "id": "sync-hourly",
+      "name": "Hourly Sync - Starter",
+      "description": "Sync every hour - perfect for getting started",
+      "price": 400,
+      "currency": "USD",
+      "interval": "month",
+      "features": [
+        "Data synced every hour",
+        "Bidirectional sync",
+        "Email support",
+        "Standard data mapping",
+        "Basic reporting"
+      ],
+      "criteria": {
+        "syncFrequency": ["hourly"]
+      }
+    },
+    {
       "id": "sync-15min",
       "name": "15 Minute Sync",
       "description": "Sync every 15 minutes",

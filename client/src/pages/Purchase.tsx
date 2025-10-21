@@ -373,9 +373,10 @@ export default function Purchase() {
                         <SelectValue placeholder="Select sync frequency" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="5min">5 Minutes</SelectItem>
-                        <SelectItem value="10min">10 Minutes</SelectItem>
+                        <SelectItem value="hourly">Hourly</SelectItem>
                         <SelectItem value="15min">15 Minutes</SelectItem>
+                        <SelectItem value="10min">10 Minutes</SelectItem>
+                        <SelectItem value="5min">5 Minutes</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
