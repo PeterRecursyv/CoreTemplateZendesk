@@ -102,6 +102,19 @@ export default function Purchase() {
 
       if (result.purchaseId) {
         setPurchaseId(result.purchaseId);
+        
+        // Send email notification for step 1
+        await sendNotification.mutateAsync({
+          purchaseId: result.purchaseId,
+          step: 1,
+          data: {
+            hubVendor: hubName || '',
+            spokeIntegration: spokeName || '',
+            customerName: step1Data.customerName,
+            customerEmail: step1Data.customerEmail,
+          },
+        });
+        
         setCurrentStep(2);
       }
     } catch (error) {
@@ -133,6 +146,20 @@ export default function Purchase() {
         paymentAmount: selectedTier?.price.toString() || "0",
       });
 
+      // Send email notification for step 2
+      await sendNotification.mutateAsync({
+        purchaseId,
+        step: 2,
+        data: {
+          ...step1Data,
+          ...step2Data,
+          hubVendor: hubName || '',
+          spokeIntegration: spokeName || '',
+          pricingTier: selectedTier?.name || '',
+          price: selectedTier?.price || 0,
+        },
+      });
+
       setCurrentStep(3);
     } catch (error) {
       console.error("Failed to update purchase:", error);
@@ -156,6 +183,22 @@ export default function Purchase() {
         id: purchaseId,
         termsAccepted: "true",
         termsAcceptedAt: new Date(),
+      });
+
+      // Send email notification for step 3
+      await sendNotification.mutateAsync({
+        purchaseId,
+        step: 3,
+        data: {
+          ...step1Data,
+          ...step2Data,
+          hubVendor: hubName || '',
+          spokeIntegration: spokeName || '',
+          pricingTier: selectedTier?.name || '',
+          price: selectedTier?.price || 0,
+          termsAccepted: true,
+          termsAcceptedAt: new Date().toISOString(),
+        },
       });
 
       setCurrentStep(4);

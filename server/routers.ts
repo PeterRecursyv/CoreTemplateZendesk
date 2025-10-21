@@ -121,24 +121,13 @@ export const appRouter = router({
     sendPurchaseNotification: publicProcedure
       .input((val: unknown) => val as any)
       .mutation(async ({ input }) => {
-        const { sendPurchaseNotification } = await import('./email-notification');
-        const { getPurchase, updatePurchase } = await import('./db');
+        const { sendStepNotification } = await import('./step-notification');
         
-        const purchase = await getPurchase(input.purchaseId);
-        if (!purchase) {
-          throw new Error('Purchase not found');
-        }
-        
-        const success = await sendPurchaseNotification({
-          purchase,
-          pricingTierName: input.pricingTierName,
+        const success = await sendStepNotification({
+          purchaseId: input.purchaseId,
+          step: input.step,
+          data: input.data,
         });
-        
-        if (success) {
-          await updatePurchase(input.purchaseId, {
-            notificationEmailSent: 'true',
-          });
-        }
         
         return { success };
       }),
