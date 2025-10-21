@@ -70,7 +70,7 @@ export default function Home() {
       <section className="container py-12">
         <div className="text-center max-w-3xl mx-auto mb-8">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Leaders in ITSM, Service Desk and Help Desk Integrations
+            Leaders in ITSM, Service/Help Desk + CRM and Marketing Integrations
           </h1>
           <p className="text-xl text-muted-foreground">
             Connect <span className="font-semibold text-foreground">{hubVendor?.name}</span> with your favorite tools. 
