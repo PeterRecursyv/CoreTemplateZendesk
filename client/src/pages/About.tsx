@@ -13,9 +13,8 @@ export default function About() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-3">
             {branding?.logo && (
-              <img src={branding.logo} alt={branding.companyName} className="h-8 w-auto" />
+              <img src={branding.logo} alt={branding.companyName} className="h-12 w-auto" />
             )}
-            <span className="font-semibold text-lg">{branding?.companyName}</span>
           </div>
           <nav className="flex items-center gap-6">
             <a href="/" className="text-sm font-medium hover:text-primary transition-colors">
