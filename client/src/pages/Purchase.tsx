@@ -57,15 +57,12 @@ export default function Purchase() {
   const createCheckoutSession = trpc.stripe.createCheckoutSession.useMutation();
   const sendNotification = trpc.notification.sendPurchaseNotification.useMutation();
 
-  // Calculate pricing tier based on selections
+  // Calculate pricing tier based on sync frequency selection
   useEffect(() => {
-    if (step2Data.dataVolume && pricingConfig) {
+    if (step2Data.syncFrequency && pricingConfig) {
       const tier = pricingConfig.tiers.find((t: PricingTier) => {
-        if (t.criteria.dataVolume === step2Data.dataVolume) {
-          if (t.criteria.syncFrequency) {
-            return t.criteria.syncFrequency.includes(step2Data.syncFrequency);
-          }
-          return true;
+        if (t.criteria.syncFrequency) {
+          return t.criteria.syncFrequency.includes(step2Data.syncFrequency);
         }
         return false;
       });
@@ -75,7 +72,7 @@ export default function Purchase() {
         setStep2Data(prev => ({ ...prev, pricingTier: tier.id }));
       }
     }
-  }, [step2Data.dataVolume, step2Data.syncFrequency, pricingConfig]);
+  }, [step2Data.syncFrequency, pricingConfig]);
 
   const handleStep1Submit = async () => {
     if (!step1Data.customerName || !step1Data.customerEmail) {
@@ -376,9 +373,9 @@ export default function Purchase() {
                         <SelectValue placeholder="Select sync frequency" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="realtime">Real-time (immediate sync)</SelectItem>
-                        <SelectItem value="hourly">Hourly</SelectItem>
-                        <SelectItem value="daily">Daily</SelectItem>
+                        <SelectItem value="5min">5 Minutes</SelectItem>
+                        <SelectItem value="10min">10 Minutes</SelectItem>
+                        <SelectItem value="15min">15 Minutes</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
