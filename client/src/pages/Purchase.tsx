@@ -37,19 +37,14 @@ export default function Purchase() {
 
   // Step 2 data
   const [step2Data, setStep2Data] = useState({
-    companyName: "",
-    entityType: "",
-    syncFrequency: "",
-    dataVolume: "",
-    pricingTier: "",
-    additionalNotes: "",
+    selectedPlan: "",
   });
 
   // Step 3 data
   const [termsAccepted, setTermsAccepted] = useState(false);
 
-  // Selected pricing tier
-  const [selectedTier, setSelectedTier] = useState<PricingTier | null>(null);
+  // Selected pricing tier/plan
+  const [selectedTier, setSelectedTier] = useState<any>(null);
 
   // Mutations
   const createPurchase = trpc.purchase.create.useMutation();
@@ -57,22 +52,15 @@ export default function Purchase() {
   const createCheckoutSession = trpc.stripe.createCheckoutSession.useMutation();
   const sendNotification = trpc.notification.sendPurchaseNotification.useMutation();
 
-  // Calculate pricing tier based on sync frequency selection
+  // Set selected tier based on plan selection
   useEffect(() => {
-    if (step2Data.syncFrequency && pricingConfig) {
-      const tier = pricingConfig.tiers.find((t: PricingTier) => {
-        if (t.criteria.syncFrequency) {
-          return t.criteria.syncFrequency.includes(step2Data.syncFrequency);
-        }
-        return false;
-      });
-      
-      if (tier) {
-        setSelectedTier(tier);
-        setStep2Data(prev => ({ ...prev, pricingTier: tier.id }));
+    if (step2Data.selectedPlan && pricingConfig) {
+      const plan = pricingConfig.plans?.find((p: any) => p.id === step2Data.selectedPlan);
+      if (plan) {
+        setSelectedTier(plan);
       }
     }
-  }, [step2Data.syncFrequency, pricingConfig]);
+  }, [step2Data.selectedPlan, pricingConfig]);
 
   const handleStep1Submit = async () => {
     if (!step1Data.customerName || !step1Data.customerEmail) {
@@ -120,26 +108,22 @@ export default function Purchase() {
     }
   };
 
-  const handleStep2Submit = async () => {
-    if (!step2Data.companyName || !step2Data.entityType || !step2Data.syncFrequency || !step2Data.dataVolume) {
-      alert("Please fill in all required fields");
+   const handleStep2Submit = async () => {
+    if (!step2Data.selectedPlan) {
+      alert("Please select a plan");
       return;
     }
 
     if (!purchaseId) {
-      alert("Purchase session not found. Please start over.");
+      alert("Purchase ID not found. Please start over.");
       return;
     }
 
     try {
       await updatePurchase.mutateAsync({
-        id: purchaseId,
-        companyName: step2Data.companyName,
-        entityType: step2Data.entityType,
-        syncFrequency: step2Data.syncFrequency,
-        dataVolume: step2Data.dataVolume,
-        pricingTier: step2Data.pricingTier,
-        additionalNotes: step2Data.additionalNotes,
+        purchaseId,
+        selectedPlan: step2Data.selectedPlan,
+        pricingTier: step2Data.selectedPlan,
         paymentAmount: selectedTier?.price.toString() || "0",
       });
 
@@ -334,82 +318,63 @@ export default function Purchase() {
                 <CardDescription>Tell us about your integration requirements</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <div>
-                    <Label htmlFor="companyName">
-                      Company Name <span className="text-destructive">*</span>
+                    <Label className="text-base font-semibold">
+                      Plan Required <span className="text-destructive">*</span>
                     </Label>
-                    <Input
-                      id="companyName"
-                      placeholder="Acme Corporation"
-                      value={step2Data.companyName}
-                      onChange={(e) => setStep2Data({ ...step2Data, companyName: e.target.value })}
-                    />
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Select your sync interval. Sync intervals may be changed during the contract period (12 months).
+                    </p>
                   </div>
 
-                  <div>
-                    <Label htmlFor="entityType">
-                      Entity Type <span className="text-destructive">*</span>
-                    </Label>
-                    <Select value={step2Data.entityType} onValueChange={(value) => setStep2Data({ ...step2Data, entityType: value })}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select entity type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="msp">Managed Service Provider (MSP)</SelectItem>
-                        <SelectItem value="enterprise">Enterprise</SelectItem>
-                        <SelectItem value="smb">Small/Medium Business (SMB)</SelectItem>
-                        <SelectItem value="startup">Startup</SelectItem>
-                      </SelectContent>
-                    </Select>
+                  {/* Plan Options */}
+                  <div className="space-y-3">
+                    {pricingConfig?.plans?.map((plan: any) => (
+                      <div
+                        key={plan.id}
+                        onClick={() => setStep2Data({ selectedPlan: plan.id })}
+                        className={`border-2 rounded-lg p-4 cursor-pointer transition-all ${
+                          step2Data.selectedPlan === plan.id
+                            ? "border-primary bg-primary/5"
+                            : "border-slate-200 hover:border-primary/50"
+                        }`}
+                      >
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-3 mb-2">
+                              <h3 className="text-lg font-semibold">{plan.name}</h3>
+                              {plan.popular && (
+                                <Badge variant="default">Popular</Badge>
+                              )}
+                            </div>
+                            <p className="text-sm text-muted-foreground mb-3">{plan.description}</p>
+                            <ul className="space-y-1.5">
+                              {plan.features?.slice(0, 3).map((feature: string, idx: number) => (
+                                <li key={idx} className="flex items-start gap-2 text-sm">
+                                  <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                                  <span>{feature}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div className="text-right ml-4">
+                            <div className="text-3xl font-bold">${plan.price}</div>
+                            <div className="text-sm text-muted-foreground">per month</div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
 
-                  <div>
-                    <Label htmlFor="syncFrequency">
-                      Sync Frequency <span className="text-destructive">*</span>
-                    </Label>
-                    <Select value={step2Data.syncFrequency} onValueChange={(value) => setStep2Data({ ...step2Data, syncFrequency: value })}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select sync frequency" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="hourly">Hourly</SelectItem>
-                        <SelectItem value="15min">15 Minutes</SelectItem>
-                        <SelectItem value="10min">10 Minutes</SelectItem>
-                        <SelectItem value="5min">5 Minutes</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div>
-                    <Label htmlFor="dataVolume">
-                      Expected Data Volume <span className="text-destructive">*</span>
-                    </Label>
-                    <Select value={step2Data.dataVolume} onValueChange={(value) => setStep2Data({ ...step2Data, dataVolume: value })}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select data volume" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="small">Small (up to 1,000 records)</SelectItem>
-                        <SelectItem value="medium">Medium (1,000 - 10,000 records)</SelectItem>
-                        <SelectItem value="large">Large (10,000+ records)</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div>
-                    <Label htmlFor="additionalNotes">Additional Notes (Optional)</Label>
-                    <Textarea
-                      id="additionalNotes"
-                      placeholder="Any specific requirements or questions?"
-                      value={step2Data.additionalNotes}
-                      onChange={(e) => setStep2Data({ ...step2Data, additionalNotes: e.target.value })}
-                      rows={4}
-                    />
+                  <div className="bg-muted/50 rounded-lg p-4 text-sm">
+                    <p className="text-muted-foreground">
+                      <strong>Contract Terms:</strong> 12-month minimum contract period. Sync intervals may be adjusted during the contract period to meet your changing business needs.
+                    </p>
                   </div>
                 </div>
 
-                {/* Pricing Display */}
+                {/* Selected Plan Summary */}
                 {selectedTier && (
                   <div className="border-t pt-6">
                     <h3 className="font-semibold mb-4">Recommended Plan</h3>
@@ -558,8 +523,8 @@ export default function Purchase() {
                         <span className="font-medium">{selectedTier?.name}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Company:</span>
-                        <span className="font-medium">{step2Data.companyName}</span>
+                        <span className="text-muted-foreground">Customer:</span>
+                        <span className="font-medium">{step1Data.customerName}</span>
                       </div>
                       <div className="border-t pt-2 mt-2 flex justify-between font-semibold">
                         <span>Total:</span>

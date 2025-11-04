@@ -52,8 +52,26 @@ export interface PricingTier {
   };
 }
 
+export interface PricingPlan {
+  id: string;
+  name: string;
+  syncInterval: string;
+  price: number;
+  currency: string;
+  billingPeriod: string;
+  description: string;
+  features: string[];
+  popular?: boolean;
+}
+
 export interface PricingConfig {
-  tiers: PricingTier[];
+  tiers?: PricingTier[];
+  plans?: PricingPlan[];
+  contractTerms?: {
+    minimumPeriod: string;
+    syncIntervalChanges: string;
+    notes: string;
+  };
 }
 
 export interface PurchaseFlowStep1 {

@@ -32,3 +32,13 @@
 - [x] Right side: Scrollable integration list with clean cards
 - [x] Improve logo quality and spacing
 
+
+
+## Purchase Flow Updates
+- [x] Update Step 2: Remove Entity Type, Sync Frequency, Expected Data Volumes
+- [x] Add Plan Required field with 3 pricing tiers
+- [x] 15 Minute Sync = $500/month
+- [x] 5 Minute Sync = $625/month
+- [x] 2 Minute Sync = $750/month
+- [x] Add note about contract period (12 months) and sync interval changes
+

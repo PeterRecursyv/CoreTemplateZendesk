@@ -1,80 +1,59 @@
 {
-  "tiers": [
+  "plans": [
     {
-      "id": "sync-hourly",
-      "name": "Hourly Sync - Starter",
-      "description": "Sync every hour - perfect for getting started",
-      "price": 400,
-      "currency": "USD",
-      "interval": "month",
-      "features": [
-        "Data synced every hour",
-        "Bidirectional sync",
-        "Email support",
-        "Standard data mapping",
-        "Basic reporting"
-      ],
-      "criteria": {
-        "syncFrequency": ["hourly"]
-      }
-    },
-    {
-      "id": "sync-15min",
+      "id": "plan-15min",
       "name": "15 Minute Sync",
-      "description": "Sync every 15 minutes",
-      "price": 600,
+      "syncInterval": "15 minutes",
+      "price": 500,
       "currency": "USD",
-      "interval": "month",
+      "billingPeriod": "month",
+      "description": "Data syncs every 15 minutes",
       "features": [
-        "Data synced every 15 minutes",
-        "Bidirectional sync",
-        "Email support",
-        "Standard data mapping",
-        "Basic reporting"
-      ],
-      "criteria": {
-        "syncFrequency": ["15min"]
-      }
-    },
-    {
-      "id": "sync-10min",
-      "name": "10 Minute Sync",
-      "description": "Sync every 10 minutes",
-      "price": 700,
-      "currency": "USD",
-      "interval": "month",
-      "features": [
-        "Data synced every 10 minutes",
-        "Bidirectional sync",
-        "Priority email support",
+        "Bidirectional synchronization",
+        "15-minute sync interval",
         "Custom field mapping",
-        "Advanced reporting",
-        "Webhook notifications"
-      ],
-      "criteria": {
-        "syncFrequency": ["10min"]
-      }
+        "Email support",
+        "12-month contract"
+      ]
     },
     {
-      "id": "sync-5min",
+      "id": "plan-5min",
       "name": "5 Minute Sync",
-      "description": "Sync every 5 minutes - fastest option",
+      "syncInterval": "5 minutes",
+      "price": 625,
+      "currency": "USD",
+      "billingPeriod": "month",
+      "description": "Data syncs every 5 minutes",
+      "features": [
+        "Bidirectional synchronization",
+        "5-minute sync interval",
+        "Custom field mapping",
+        "Priority email support",
+        "12-month contract"
+      ],
+      "popular": true
+    },
+    {
+      "id": "plan-2min",
+      "name": "2 Minute Sync",
+      "syncInterval": "2 minutes",
       "price": 750,
       "currency": "USD",
-      "interval": "month",
+      "billingPeriod": "month",
+      "description": "Data syncs every 2 minutes - fastest option",
       "features": [
-        "Data synced every 5 minutes",
-        "Bidirectional sync",
-        "24/7 priority support",
-        "Custom field mapping and transformations",
-        "Advanced reporting and analytics",
-        "Webhook notifications",
-        "99.9% uptime SLA guarantee"
-      ],
-      "criteria": {
-        "syncFrequency": ["5min"]
-      }
+        "Bidirectional synchronization",
+        "2-minute sync interval (fastest)",
+        "Custom field mapping",
+        "Priority support with dedicated account manager",
+        "12-month contract"
+      ]
     }
-  ]
+  ],
+  "contractTerms": {
+    "minimumPeriod": "12 months",
+    "syncIntervalChanges": "Sync intervals may be changed during the contract period",
+    "notes": "All plans include bidirectional data synchronization and custom field mapping"
+  }
 }
 
