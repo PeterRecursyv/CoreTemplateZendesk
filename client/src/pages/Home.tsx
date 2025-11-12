@@ -28,11 +28,7 @@ export default function Home() {
   }, [integrations, searchQuery]);
 
   const handleIntegrationClick = (spoke: any) => {
-    setLocation(
-      `/purchase?hub=${hubVendor?.id}&spoke=${spoke.id}&hubName=${encodeURIComponent(
-        hubVendor?.name || ""
-      )}&spokeName=${encodeURIComponent(spoke.name)}`
-    );
+    setLocation(`/integration?hub=${hubVendor?.id}&spoke=${spoke.id}`);
   };
 
   return (
@@ -188,23 +184,13 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="flex-shrink-0 flex gap-2">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setLocation(`/integration?hub=${hubVendor?.id}&spoke=${integration.id}`);
-                        }}
-                      >
-                        Learn More
-                      </Button>
+                    <div className="flex-shrink-0">
                       <Button
                         variant="default"
                         size="sm"
                         className="bg-blue-600 hover:bg-blue-700"
                       >
-                        Get Started
+                        View Details
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
                     </div>

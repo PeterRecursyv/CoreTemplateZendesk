@@ -74,3 +74,11 @@
 - [x] Update spoke-integrations.json
 - [x] Update Zendesk hub config
 
+
+
+## Fix Navigation Flow
+- [x] Change integration card click to go to detail page (not purchase)
+- [x] Remove "Learn More" button (redundant)
+- [x] Button now says "View Details" and goes to integration detail page
+- [x] Reviewed recursyv.com connector page for design inspiration
+
