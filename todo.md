@@ -42,3 +42,9 @@
 - [x] 2 Minute Sync = $750/month
 - [x] Add note about contract period (12 months) and sync interval changes
 
+
+
+## Terms of Service Update
+- [x] Replace generic terms with official Recursyv Terms of Service
+- [x] Update Step 3 in purchase flow with complete ToS document
+

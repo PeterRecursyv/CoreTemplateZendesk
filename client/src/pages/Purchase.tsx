@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
+import { TermsOfServiceContent } from "@/components/TermsOfService";
 import { trpc } from "@/lib/trpc";
 import { useLocation } from "wouter";
 import { ArrowLeft, ArrowRight, Check, Mail } from "lucide-react";
@@ -429,42 +430,7 @@ export default function Purchase() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="border rounded-lg p-6 max-h-96 overflow-y-auto bg-muted/30">
-                  <h3 className="font-semibold mb-4">Service Agreement</h3>
-                  <div className="space-y-4 text-sm text-muted-foreground">
-                    <p>
-                      By proceeding with this purchase, you agree to the following terms and conditions for the integration service between {hubName} and {spokeName}.
-                    </p>
-                    
-                    <h4 className="font-semibold text-foreground">1. Service Scope</h4>
-                    <p>
-                      {branding?.companyName} will provide fully managed integration services including setup, configuration, data mapping, testing, and ongoing support for the selected integration.
-                    </p>
-
-                    <h4 className="font-semibold text-foreground">2. Data Security</h4>
-                    <p>
-                      All data transmitted through our integration platform is encrypted in transit using industry-standard TLS protocols. We maintain strict security measures and comply with relevant data protection regulations.
-                    </p>
-
-                    <h4 className="font-semibold text-foreground">3. Service Level Agreement</h4>
-                    <p>
-                      We commit to maintaining the agreed sync frequency and providing proactive monitoring. Any issues will be addressed according to the support tier included in your selected plan.
-                    </p>
-
-                    <h4 className="font-semibold text-foreground">4. Payment Terms</h4>
-                    <p>
-                      Payment is processed securely through Stripe. Your subscription will renew automatically on a monthly basis unless cancelled. You may cancel at any time with 30 days notice.
-                    </p>
-
-                    <h4 className="font-semibold text-foreground">5. Support & Maintenance</h4>
-                    <p>
-                      Ongoing support is included as specified in your plan. We provide regular updates, bug fixes, and assistance with any integration-related issues.
-                    </p>
-
-                    <h4 className="font-semibold text-foreground">6. Cancellation Policy</h4>
-                    <p>
-                      You may cancel your service at any time by providing 30 days written notice. No refunds will be provided for partial months of service.
-                    </p>
-                  </div>
+                  <TermsOfServiceContent />
                 </div>
 
                 <div className="flex items-start space-x-3">

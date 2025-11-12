@@ -1,0 +1,221 @@
+o	Standard Terms of Service: Our current contracting terms and conditions (this document).
+
+
+1.2	The clause headings are for convenience only and shall not affect interpretation of this Agreement
+
+2.	Parties
+2.1	The Agreement is made between the party identified within the Proposal Document (“You”) and Recursyv Limited (CRN 10318323; referred to as “Us”, “We” and/or “Recursyv” as the context requires) whose registered office is 238 Station Road, Addlestone, England, KT15 2PS. 
+
+2.2	Each party warrants to the other that it has the right, power and authority to enter into this Agreement and that the performance of its obligations under this Agreement shall not be unlawful or be in breach of any other agreement.
+
+2.3	Any notice to be given under this Agreement shall be validly served if it is in writing and sent to the respective party's address set out above or in the Proposal Document (or as otherwise notified from time to time) by post or email (and if sent by email, where the sending party has retained a confirmation report that the email was received). Notices shall be deemed validly served within 48 hours (if sent by post) and upon the same day of sending by email.
+
+3.	Definitions
+Additional Services	Means any other services detailed in the Proposal Document but not described in the Service Guide that Recursyv may supply to You
+Ad-hoc Fee(s)	Means any one-off sum(s) as set out in the Proposal Document, payable by You to Us on the Payment Date
+Confidential Information	Information made available from one party to another for the purposes of this Agreement and which is otherwise not publicly available 
+Fee(s)	The Monthly Fee(s) and/or Ad-hoc Fee(s), as applicable.
+Intellectual Property Rights	Means rights in inventions, patents, copyright, rights in designs (whether registrable or not), rights in databases, rights in confidential information and rights in trademarks existing anywhere in the world
+Monthly Fee(s)	Means any monthly sum(s) as set out in the Proposal Document, payable by You to Us on the Payment Date
+Payment Date(s)	Means the dates set out in the Proposal Document on which the Fee(s) are due
+Services	The services to be supplied by Recursyv, as described in the Service Guide which accompanied the Proposal Document provided. Such Services may include provision of certain software, termed Software Services.
+Software Services	Provision of the functionality delivered by software developed/configured by Recursyv. Software Services are provided on an ongoing subscription basis.
+
+4.	Commencement and term
+4.1	This Agreement shall commence on the earlier of 1) the date You provide Us with a purchase order; 2) the date You sign the Proposal Document; or 3) the date We commence work on any of the Services/Additional Services set out in the Proposal Document (the "Commencement Date") and shall last for a minimum period of 12 months (the "Initial Term") unless terminated earlier in accordance with Clause 13 Termination. 
+
+4.2	After this Initial Term, this Agreement shall automatically revert to a rolling monthly contract, unless: 
+4.2.1 either party notifies the other party of termination, in writing, at least 90 days before the end of the Initial Term or any subsequent period during the rolling contract Period, in which case this Agreement shall terminate upon the expiry of the applicable Initial Term or Renewal Period; or
+4.2.2 otherwise terminated in accordance with the provisions of this Agreement.
+
+4.3	In the event that Recursyv are providing Software Services, the minimum term for service consumption is 12 months from the date of commencement of the Software Service. In this instance, the renewal date will be determined to be 12 months from the date of commencement of the Software Service rather than 12 months from the date of commencement of this Agreement. In practice, this will typically result in an initial term which includes the both time taken to setup the Software Service for use as well as the initial 12 months of consumption.
+
+4.4	The Initial Term together with any subsequent Renewal Periods shall be the term of this Agreement (the “Term”).
+
+5.	Fees and payment
+5.1	With effect from the Commencement Date, You shall pay the Fees to Us as set out in the Proposal Document, in full and without any deduction.
+
+5.2	Recursyv reserves the right to increase the Fee(s) annually at the end of the Initial Term or any Renewal Period.  Such increase shall not exceed the United Kingdom Retail Price Index.
+
+5.3	In the event that Recursyv is providing licences to use another vendor’s software/service (e.g. Microsoft), increases in the underlying licence fee will result in an immediate increase to the fee charged by Recursyv.  Should the licensors of the relevant software/service uplift their fees by more than the provisions of Clause 5.2, Recursyv reserves the right to pass through such uplifts directly to You. Where possible, Recursyv will provide advance notification of any such increase. We will provide evidence of such a price change at the request of the Client.
+
+5.4	In the event that Recursyv is using an underlying service to provide the Software Services (e.g. Microsoft Azure) and the cost of the underlying service increases, Recursyv retain the right to increase the Software Service fee accordingly. Should the licensors of the relevant software/service uplift their fees by more than the provisions of Clause 5.2, Recursyv reserves the right to pass through such uplifts directly to You. Where possible, Recursyv will provide advance notification of any such increase. We will provide evidence of such a price change at the request of the Client. The Service Guide provided by Recursyv identifies any relevant underlying services.
+
+5.5	The Monthly Fees are payable for access to the relevant Services during the Term and are not tied to Your use of the same.  No reduction shall apply if You do not use the Services.
+
+5.6	The parties acknowledge that any amount due under this Agreement and remaining unpaid beyond 14 days from the Payment Date shall be a qualifying debt and may bear statutory interest pursuant to the Late Payment of Commercial Debts (Interest) Act 1998.  
+
+5.7	We reserve the right to suspend Our Services under this Agreement in the event of late/non-payment.
+
+5.8	All fees quoted in the Proposal Document exclude VAT. VAT will be added to Fees where applicable.
+
+6.	Data protection
+6.1	In this clause 6 Data protection, the terms "Data Controller”, "Data Processor", and "Personal Data" shall have those meanings as set out in the Data Protection Act 2018.
+
+6.2	In the event that the Service is being sold directly to You, You agree that, in respect of any Personal Data that is made available to Us under this Agreement, You are the Data Controller and We are the Data Processor. As such, You agree that You shall comply with your responsibilities under the Data Protection Act 2018 and all other applicable UK data protection law with respect to the Personal Data.
+
+6.3	To the extent that Recursyv processes any Personal Data, Recursyv undertakes that at all material times it will:
+6.3.1 only process Personal Data strictly as required in the proper performance of this Agreement or otherwise in accordance with Your instructions from time to time (including promptly complying with any request from You requiring Us to amend, transfer or delete all or any Personal Data);
+6.3.2 not process any Personal Data for any purpose other than outlined in clause 6.3;
+6.3.3 not subcontract any processing of Personal Data without Your prior written authorisation.  You acknowledge and accept that to provide the Services, We may need to subcontract certain aspects of the Services to our vendors/suppliers (e.g. Microsoft) and that may include subcontracting the processing of Personal Data; 
+6.3.4 not do or procure anything to be done that does or may cause You to breach any data protection law;
+6.3.5 ensure that all appropriate technical and organisational measures are at all times taken against the unauthorised or unlawful processing of any or all Personal Data and against the accidental loss or destruction of, or damage to, any or all Personal Data;
+6.3.6 not transfer or transmit any Personal Data outside of the European Economic Area (EEA) without Your prior written consent.  This includes ensuring that the selected underlying internet services are within the EEA. Should You request an underlying service that is provided outside of the EEA, You shall be deemed to not give Your consent under this clause; 
+6.3.7 ensure that only personnel that have a need to access Personal Data for the purposes of the proper performance of this Agreement are granted access to such data and that such personnel comply with the provisions this Agreement; 
+6.3.7 promptly notify You if We become aware of any unauthorised or unlawful processing, loss of, damage to or destruction of any the Personal Data.
+
+6.4	You acknowledge that We are reliant on You for direction as to the extent to which We are entitled to use and process the Personal Data.  Consequently, We will not be liable for any loss or damage You may suffer in connection with any claim arising from any action or omission by Us, to the extent that such action or omission resulted directly from Your instructions. 
+
+6.5	You will ensure that You have obtained all appropriate and relevant consents in accordance with applicable data protection legislation to permit Recursyv to process personal data using underlying internet based services.  Where You select an underlying service that is outside the EEA, it is your responsibility to ensure that You have obtained the necessary consents to transfer the Personal Data of your Data Subjects outside of the EEA.
+
+7.	Software and service provision
+7.1	Subject to Your payment of Fees, You are granted a non-exclusive and non-transferable licence to use the Service(s), including any associated software, during the Term.
+
+7.2	All Intellectual Property Rights and title to the Service(s) shall remain with Recursyv and/or its licensors and no interest or ownership in the Service(s) or the Intellectual Property Rights is conveyed to You under this Agreement or otherwise. 
+
+7.3	No right to modify, adapt, or translate the Service(s) or create derivative works from the Service(s) is granted to You. 
+
+7.4	Nothing in this Agreement shall be construed to mean, by inference or otherwise, that You have any right to obtain source code for the software comprised within the Service(s).
+
+7.5	Save where (and solely to the extent) permitted by law, disassembly, decompilation or reverse engineering and other source code derivation of the software comprised within the Service(s) is prohibited. 
+
+7.6	You may not lease, loan, resell or otherwise distribute the Service(s) unless permitted in writing by Recursyv.  Use of the Services is solely for You and Your own data processing.  You may not use the Services for commercial timesharing, rental, third party training or service bureau purposes.
+
+7.7	You warrant and represent that You shall maintain all reasonable security measures (as may change over time) covering, without limitation, confidentiality, authenticity and integrity to ensure that the access to the Service(s) granted under this Agreement is limited as set out under this Agreement.
+
+8.	Your responsibility
+8.1	You shall provide Recursyv full and uninterrupted remote access to your relevant software/environment(s), together with full access to premises, as may reasonably be required to for the proper performance of the Services.
+
+8.2	You shall ensure that the computing environment provided by yourselves is suitable for ongoing use of Recursyv’s Service(s), including (1) ensuring your systems support relevant web browser software, (2) has suitably fast internet access and (3) ensuring that any additional add-ons, integrations and extensions to your software do not interfere with the running of Recursyv service(s).
+
+8.3	You shall comply with all software vendor licensing requirements (“Software Licences”), be they Recursyv requirements or those imposed by an additional vendor and provided by Recursyv (e.g. Microsoft).  
+
+8.4	You shall ensure that all reasonable steps are taken to ensure that the Service(s) are operated in a proper manner by your employees.
+
+8.5	You shall report any faults promptly to Recursyv.
+
+8.6	You shall cooperate with Recursyv in performing the Service(s) and provide any assistance/information as may reasonably be required in relation to diagnosis of any fault.
+
+8.7	Recursyv are not responsible for the quality of source data and the implications of bad data being synced via the Recursyv platform. Bad data is considered to be any data that has the potential to cause damage or a data breach of any description involving any party.
+
+8.8	You acknowledge that Recursyv shall not be held responsible for maintaining the Service(s) if You are in breach of any obligations under this clause 8 Your responsibility.
+
+9.	Suitability of service
+9.1	Recursyv warrants that the Service(s) shall be performed with reasonable skill and care and by appropriately skilled individuals.  In the event of any breach of this warranty Your sole remedy shall be to permit Us to re-perform the services so as to comply with the warranty contained in this clause 9.1.  No representation or warranty is given by Recursyv that all faults will be fixed, or fixed within a specified period of time. The Service Guide details Recursyv’s service level response times.
+
+9.2	We shall use Our reasonable endeavours to perform the Services in a timely manner in accordance with the timescales specified in the relevant service levels.
+
+9.3	Recursyv guarantee an uptime of service in excess of 99.9% of the Recursyv Platform. Recursyv cannot be held responsible for third party applications uptime.
+
+9.4	The Services are provided “as is” and We do not guarantee that the Services are free of minor errors not materially affecting such performance.  The undertaking given in this Clause is in lieu of any condition or warranty express or implied by law as to the quality or fitness for any particular purpose of the Services.
+
+9.5	You acknowledge that the Services have not been prepared to meet Your individual requirements and that it is therefore Your responsibility to ensure that the facilities and functions described in the Service Guide meet Your requirements.
+
+9.6	Recursyv may, on prior notice to You, make changes to the Service Guide.  With effect from the date of notice, the revised Service Guide shall apply to this Agreement.
+
+9.7	Your attention is drawn to the fact that Recursyv’s Services may be reliant on underlying software/internet services provided by an additional vendor. It may be that the vendor modifies their product, releases a new version or withdraws service for any reason which, in turn, may impact Recursyv’s ability to provide Services. Recursyv will proactively monitor and assess product updates on an ongoing basis for any potential impacts. If We believe this will have any impact on Our ability to provide Our Services, We will raise this with You as soon as is practical.
+
+9.8	Any service provided by Recursyv, including but not limited to the Services, may only be used for lawful purposes.  Transmission of any data through Our or Our partner’s network(s), or use of any part of Our or Our partner’s network(s) in violation of UK law or regulation is prohibited.  Data stored on Our or Our partner’s servers by You must be legal, including copyrights, performing rights and any other relevant Intellectual Property Rights.
+
+10.	Additional Services and/or additional service consumption
+10.1	You may from time to time request Recursyv to supply Additional Services. Any such Additional Services shall be charged at Recursyv’s then standard rates. Additional Services may include increased service consumption and/or consulting services.
+
+10.2	Recursyv shall use its reasonable endeavours to comply with any request for Additional Services but shall not be obliged to do so.
+
+10.3	Charges for any Additional Services to be provided by Recursyv to You shall be agreed in writing in advance of performing Additional Services and paid within 7 days of date of invoice. 
+
+10.4	In the event that Recursyv purchase any software licence on your behalf, then the invoice is payable immediately upon receipt.
+
+10.5	Consumption of internet based services over agreed thresholds and without prior arrangement will be charged at the appropriate additional rate in accordance with Recursyv’s Proposal Document (if a higher consumption tier rate was proposed) or Recursyv’s standard pricing (if a higher consumption tier rate was not proposed).
+
+10.6	Additional Services may include consulting services. Unless otherwise agreed:
+Consulting services are delivered in accordance with Recursyv’s standard rates
+All consulting services are delivered on a time and materials basis
+Consulting services will be confirmed by means of a Proposal. Once You’ve signed acceptance of the Proposal for consulting services, subsequent cancellation may incur some or all of the proposed consulting fees as it may be that Recursyv have started work before consultants are onsite at your premises
+The Intellectual Property Rights for any bespoke development built as a result of Additional Services or otherwise generated under this Agreement is retained by Recursyv
+
+11.	Assignment
+11.1	You shall not, without Our prior written consent, assign, transfer, charge, mortgage, subcontract or deal in any other manner with all or any of your rights or obligations under this Agreement.
+
+11.2	Recursyv may, at any time, assign, transfer, charge, mortgage, subcontract or deal in any other manner with any or all of its rights and obligations under this Agreement, provided it gives written notice to You. 
+
+11.3	This Agreement will survive a change of ownership or change of control for either party.
+
+12.	Force Majeure
+12.1	Recursyv may defer the delivery of the Services if prevented from doing so by circumstances beyond Our control. If the situation continues for more than 28 days You may terminate this Agreement, in writing, with immediate effect.
+
+13.	Termination
+13.1	Without prejudice to Clause 4.1 either party may terminate this Agreement at any time during the Term with immediate effect:
+if the other fails to pay any sum due on or before the Payment Date set out in the Proposal Document and the party wishing to terminate has given the party in default 14 days’ notice requiring payment and the party in default has failed to pay in that period;
+if the other party is in material default of any obligation under this Agreement;
+if a resolution is passed for the voluntary or compulsory liquidation of the other or a receiver or administrator is appointed over all or part of its business or the other commits any other act of insolvency; or
+for force majeure pursuant to Clause 12 Force Majeure.
+
+13.2	On termination of this Agreement:
+all rights of either party to make use of the name and/or logo of the other under this Agreement shall immediately cease; and
+both parties shall promptly account to the other for all payments due in accordance with this Agreement (up to and including the date of termination). 
+
+13.3	Termination of this Agreement for any reason shall not affect the accrued rights of the parties under this Agreement.
+
+14.	Indemnity
+14.1	You indemnify Recursyv for all claims, losses or other liability arising out of:
+Not obtaining any necessary permissions for Recursyv to access and use your IT system(s)
+Not obtaining the appropriate license or other Intellectual Property Right(s) necessary to permit the work
+The effect of Recursyv’s work on any third party product warranties held by You
+
+14.2	Where We use any software supplied by You in provision of the Services (or We procure software on Your behalf), It is Your responsibility to appropriately license and maintain the relevant software independently of Us.  Further, You shall supply to Us and keep updated any details of the relevant software licences such as limits or restrictions, where such limits or restrictions will materially affect the Services provided by Us.  In these circumstances, We accept no liability whatsoever in respect of the relevant software and You shall fully indemnify Us against all claims, demands, actions, costs, expenses (including but not limited to full legal costs and disbursements on a solicitor and client basis), losses and damages arising from or incurred by reason of any infringement or alleged infringement of any intellectual property right by Our use of the relevant software in connection with the Agreement.
+
+15.	Confidentiality
+15.1	Both parties shall keep confidential this Agreement and all other information of the other party designated as ‘confidential’ obtained under or in connection with this Agreement and shall not divulge the same to any third party without the prior written consent of the other party.
+
+15.2	The provisions of this Clause shall not apply to:
+any information in the public domain otherwise than by breach of this Agreement.
+information in the possession of the receiving party thereof before divulgence as aforesaid.
+information obtained from a third party who is free to divulge the same.
+
+15.3	We undertake that We will not at any time use, divulge or communicate to any person, except to professional representatives or advisers or as may be required by law or any legal or regulatory authority, any Confidential Information which may have or may in the future come into Our knowledge.
+
+15.4	In the event that either party is required to disclose such information as a result of a request by an applicable regulatory authority, that party shall promptly notify the other party.
+
+15.5	In the event that any Confidential Information is copied, disclosed or used otherwise than as permitted under this Agreement, the party which has disclosed said Confidential Information shall, as soon as is practicable, notify the other party and, if requested, take such steps as shall be necessary to remedy the default and/or prevent further unauthorised copying, disclosure or use.
+
+15.6	Both parties agree to ensure proper and secure storage of all Confidential Information and any copies thereof to at least the standard as the other party.
+
+15.7	The obligations under this Clause 15 Confidentiality shall survive the variation, renewal, termination or expiration of this Agreement.
+
+
+16.	Limitation of liability
+16.1	Neither party’s liability for any of the following is excluded or limited by this Agreement:
+for death or personal injury caused by that party’s negligence or the negligence of its employees, agents or sub-contractors
+for fraud or fraudulent misrepresentation
+for any liability which cannot be legally excluded or limited under English law
+
+16.2	Subject to the provisions of clause 16.1 Our total liability for direct losses in contract, tort, misrepresentation, breach of statutory duty or otherwise in connection with the Agreement or the provision of the Services for any and all events and/or claims arising in any Year shall be limited to the total charges and resulting sums paid (excluding VAT and expenses) by You to Us in that Year; for the purposes of this clause, “Year”  shall mean a period of 12 months (or shorter period in the period immediately prior to termination of the Agreement) commencing on the Commencement Date or any anniversary of such Commencement Date.
+
+16.3	Without prejudice to the provisions of clause 16.1 in no event shall either party be liable to the other for any economic, indirect or consequential loss or damages.
+
+16.4	In no event shall Recursyv be liable for loss of profits, business, revenue, goodwill; loss of contracts; loss of anticipated savings; loss of damage to or corruption of data; and/or loss of the use of any equipment or process or loss of operational time or loss of availability.
+
+16.5	We shall be liable for, and the levels of liability in this clause 16 shall be applicable to, any acts/or omissions of Our servants, agents and subcontractors.
+
+16.6	The provisions of this clause 16 shall survive the termination of this Agreement howsoever arising.
+
+17.	Non-solicitation
+17.1	You shall not, for the duration of this Agreement and for a period of six months following termination, directly or indirectly induce or attempt to induce any employee of Recursyv who has been engaged in the provision, receipt, review or management of the Service(s) or otherwise in connection with this Agreement to leave the employment of Recursyv.
+
+18.	General 
+18.1	This Agreement constitutes the entire agreement between the parties relating to its subject matter. Each party confirms that it has not relied upon any representation not recorded in this Agreement in entering into this Agreement.
+
+18.2	No person who is not a party to this Agreement shall have any right to enforce any term of this Agreement.
+
+18.3	No amendment or addition to this Agreement shall be made unless made in writing and signed by both parties.
+
+18.4	The parties are not partners nor joint venturers nor is either party entitled to act as nor represent itself as agent for the other nor to pledge the other’s credit.
+
+18.5	Any failure or delay by either party in enforcing any provision of this Agreement will not be construed as a waiver of any rights under them. Any waiver of any breach or default under this Agreement by Recursyv shall not be deemed a waiver of any further breach or default or alter the terms of this Agreement in any way.
+
+18.6	If any provision or term of this Agreement shall be declared illegal, invalid or unenforceable for any reason whatsoever, such terms or provisions shall be divisible from this Agreement and the remainder of this Agreement shall remain enforceable.
+
+18.7	It is recognised that vendors of the underlying software may reject a proposed customer at their discretion. Without prejudice to Clause 13, Recursyv reserves the right to reject Your custom.  
+
+18.8	The formation, existence, construction, performance, validity and all aspects of the Agreement will be governed by English law and the parties submit to the exclusive jurisdiction of the English courts.
