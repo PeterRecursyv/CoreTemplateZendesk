@@ -203,7 +203,7 @@
     "id": "xurrent",
     "name": "Xurrent",
     "description": "Enterprise service management platform",
-    "logo": "/assets/logos/xurrent.png",
+    "logo": "/assets/logos/xurrent-logo.webp",
     "categories": ["ITSM", "Enterprise"],
     "available": true
   },

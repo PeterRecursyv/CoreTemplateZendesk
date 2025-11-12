@@ -96,3 +96,10 @@
 - [x] Check route configuration in App.tsx - route was missing
 - [x] Added /about route to App.tsx
 
+
+
+## Update Xurrent Logo
+- [x] Search for correct Xurrent logo from xurrent.com
+- [x] Download and replace current logo
+- [x] Update configuration file
+
