@@ -48,3 +48,17 @@
 - [x] Replace generic terms with official Recursyv Terms of Service
 - [x] Update Step 3 in purchase flow with complete ToS document
 
+
+
+## Integration Detail Pages
+- [x] Create IntegrationDetail page component
+- [x] Add integration-specific content (features, use cases, benefits)
+- [x] Add route for /integration/:hubId/:spokeId
+- [x] Link from homepage integration cards to detail pages
+
+
+
+## Logo Updates
+- [x] Replace Datto RMM logo (remove rainbow background)
+- [x] Replace Autotask logo (remove rainbow background)
+

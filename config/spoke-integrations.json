@@ -43,7 +43,7 @@
     "id": "autotask",
     "name": "Autotask",
     "description": "Professional services automation",
-    "logo": "/assets/logos/autotask.png",
+    "logo": "/assets/logos/autotask.png?v=2",
     "categories": ["PSA", "Project-Management"],
     "available": true
   },
@@ -83,7 +83,7 @@
     "id": "dattormm",
     "name": "Datto RMM",
     "description": "Remote monitoring and management",
-    "logo": "/assets/logos/dattormm.png",
+    "logo": "/assets/logos/datto-rmm.png",
     "categories": ["RMM", "Security"],
     "available": true
   },

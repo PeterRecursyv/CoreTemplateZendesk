@@ -188,10 +188,21 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 flex gap-2">
                       <Button
                         variant="outline"
-                        className="group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-colors"
+                        size="sm"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setLocation(`/integration?hub=${hubVendor?.id}&spoke=${integration.id}`);
+                        }}
+                      >
+                        Learn More
+                      </Button>
+                      <Button
+                        variant="default"
+                        size="sm"
+                        className="bg-blue-600 hover:bg-blue-700"
                       >
                         Get Started
                         <ArrowRight className="w-4 h-4 ml-2" />
