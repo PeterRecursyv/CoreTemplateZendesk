@@ -103,3 +103,9 @@
 - [x] Download and replace current logo
 - [x] Update configuration file
 
+
+
+## Clean Up About Us Page
+- [x] Remove "About Recursyv" banner/heading
+- [x] Simplify page layout
+

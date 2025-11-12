@@ -33,22 +33,9 @@ export default function About() {
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* Main Content */}
       <section className="container py-16 md:py-24">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            {branding?.logo && (
-              <div className="flex justify-center mb-6">
-                <img src={branding.logo} alt={branding.companyName} className="h-16 w-auto" />
-              </div>
-            )}
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              About {branding?.companyName}
-            </h1>
-            <p className="text-xl text-muted-foreground">
-              {branding?.tagline}
-            </p>
-          </div>
 
           {/* About Us Content */}
           <Card className="mb-12">
