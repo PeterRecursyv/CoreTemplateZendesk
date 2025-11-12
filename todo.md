@@ -82,3 +82,10 @@
 - [x] Button now says "View Details" and goes to integration detail page
 - [x] Reviewed recursyv.com connector page for design inspiration
 
+
+
+## Update Security Features
+- [x] Change "TLS 1.3 encryption in transit" to "AES-256Bit Encryption in Transit"
+- [x] Remove "AES-256 encryption at rest"
+- [x] Add "No data held at rest"
+

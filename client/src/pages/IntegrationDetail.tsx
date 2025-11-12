@@ -335,11 +335,11 @@ export default function IntegrationDetail() {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                    TLS 1.3 encryption in transit
+                    AES-256Bit Encryption in Transit
                   </li>
                   <li className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                    AES-256 encryption at rest
+                    No data held at rest
                   </li>
                   <li className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
