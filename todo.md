@@ -89,3 +89,10 @@
 - [x] Remove "AES-256 encryption at rest"
 - [x] Add "No data held at rest"
 
+
+
+## Fix About Us Page
+- [x] Investigate 404 error on About Us page
+- [x] Check route configuration in App.tsx - route was missing
+- [x] Added /about route to App.tsx
+
