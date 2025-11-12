@@ -62,3 +62,15 @@
 - [x] Replace Datto RMM logo (remove rainbow background)
 - [x] Replace Autotask logo (remove rainbow background)
 
+
+
+## Add New ITSM Vendors
+- [x] Add TOPdesk (ITSM)
+- [x] Add SysAid (ITSM)
+- [x] Add Xurrent (ITSM)
+- [x] Add Deskpro (ITSM)
+- [x] Add Alemba (ITSM)
+- [x] Download logos for all new vendors
+- [x] Update spoke-integrations.json
+- [x] Update Zendesk hub config
+

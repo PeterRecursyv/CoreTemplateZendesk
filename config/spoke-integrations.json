@@ -182,6 +182,46 @@
     "logo": "/assets/logos/zoho.png",
     "categories": ["CRM", "Productivity"],
     "available": true
+  },
+  {
+    "id": "topdesk",
+    "name": "TOPdesk",
+    "description": "Service management software for ITSM",
+    "logo": "/assets/logos/topdesk.jpg",
+    "categories": ["ITSM", "Service-Desk"],
+    "available": true
+  },
+  {
+    "id": "sysaid",
+    "name": "SysAid",
+    "description": "IT service management and help desk solution",
+    "logo": "/assets/logos/sysaid.png",
+    "categories": ["ITSM", "Helpdesk"],
+    "available": true
+  },
+  {
+    "id": "xurrent",
+    "name": "Xurrent",
+    "description": "Enterprise service management platform",
+    "logo": "/assets/logos/xurrent.png",
+    "categories": ["ITSM", "Enterprise"],
+    "available": true
+  },
+  {
+    "id": "deskpro",
+    "name": "Deskpro",
+    "description": "Helpdesk and customer support software",
+    "logo": "/assets/logos/deskpro.webp",
+    "categories": ["ITSM", "Helpdesk"],
+    "available": true
+  },
+  {
+    "id": "alemba",
+    "name": "Alemba",
+    "description": "Service management solution",
+    "logo": "/assets/logos/alemba.png",
+    "categories": ["ITSM", "Service-Desk"],
+    "available": true
   }
 ]
 
