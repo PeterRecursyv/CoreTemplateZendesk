@@ -109,3 +109,23 @@
 - [x] Remove "About Recursyv" banner/heading
 - [x] Simplify page layout
 
+
+
+## Fix Integration Display Issue
+- [ ] Investigate why integrations disappeared from published site
+- [ ] Check configuration loading in production
+- [ ] Verify API endpoints are working
+
+
+
+## Fix Page Scroll Position
+- [x] Fix integration detail page to scroll to top on navigation
+- [x] Add scroll restoration to top when route changes
+
+
+
+## Add US Phone Number
+- [x] Add US phone number to branding configuration (already present)
+- [x] Update Contact Us section to show both UK and US numbers
+- [x] Update footer to show both phone numbers on all pages
+

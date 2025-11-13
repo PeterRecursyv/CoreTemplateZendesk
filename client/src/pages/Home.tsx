@@ -221,9 +221,15 @@ export default function Home() {
                 </a>
               </p>
               <p className="text-slate-300">
-                Phone:{" "}
+                Phone (UK):{" "}
                 <a href={`tel:${branding?.contactPhoneUK || "+44 118 380 0142"}`} className="hover:text-blue-400">
                   {branding?.contactPhoneUK || "+44 118 380 0142"}
+                </a>
+              </p>
+              <p className="text-slate-300">
+                Phone (US):{" "}
+                <a href={`tel:${branding?.contactPhoneUS || "+1 833 749 3781"}`} className="hover:text-blue-400">
+                  {branding?.contactPhoneUS || "+1 833 749 3781"}
                 </a>
               </p>
             </div>

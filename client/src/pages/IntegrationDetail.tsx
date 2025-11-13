@@ -5,9 +5,15 @@ import { Badge } from "@/components/ui/badge";
 import { trpc } from "@/lib/trpc";
 import { useLocation } from "wouter";
 import { ArrowLeft, Check, Clock, Shield, Zap, Database, RefreshCw, TrendingUp } from "lucide-react";
+import { useEffect } from "react";
 
 export default function IntegrationDetail() {
   const [, setLocation] = useLocation();
+  
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   // Get URL parameters
   const params = new URLSearchParams(window.location.search);
@@ -403,7 +409,8 @@ export default function IntegrationDetail() {
             <div>
               <h3 className="font-semibold mb-4">Contact Us</h3>
               <p className="text-sm text-muted-foreground">Email: {branding?.contactEmail}</p>
-              <p className="text-sm text-muted-foreground">Phone: {branding?.contactPhoneUK}</p>
+              <p className="text-sm text-muted-foreground">Phone (UK): {branding?.contactPhoneUK}</p>
+              <p className="text-sm text-muted-foreground">Phone (US): {branding?.contactPhoneUS}</p>
             </div>
             <div>
               <h3 className="font-semibold mb-4">Address</h3>
