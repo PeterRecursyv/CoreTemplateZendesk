@@ -129,3 +129,9 @@
 - [x] Update Contact Us section to show both UK and US numbers
 - [x] Update footer to show both phone numbers on all pages
 
+
+
+## Embed Video on About Us Page
+- [x] Add Vimeo video embed (https://vimeo.com/1131345189) to About Us page
+- [x] Position video appropriately in page layout
+

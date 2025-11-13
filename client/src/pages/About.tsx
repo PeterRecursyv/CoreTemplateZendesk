@@ -49,6 +49,25 @@ export default function About() {
             </CardContent>
           </Card>
 
+          {/* Video Section */}
+          <Card className="mb-12">
+            <CardHeader>
+              <CardTitle className="text-2xl">See How We Work</CardTitle>
+              <CardDescription>Learn more about our integration solutions</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  src="https://player.vimeo.com/video/1131345189?badge=0&autopause=0&player_id=0&app_id=58479"
+                  className="absolute top-0 left-0 w-full h-full rounded-lg"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                  title="Recursyv Integration Solutions"
+                ></iframe>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Key Benefits */}
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             <Card>
