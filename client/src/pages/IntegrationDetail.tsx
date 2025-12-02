@@ -383,6 +383,54 @@ export default function IntegrationDetail() {
           </CardContent>
         </Card>
 
+        {/* Related Integrations Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">Related Integrations</CardTitle>
+            <CardDescription>Other integrations you might be interested in</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid md:grid-cols-3 gap-6">
+              {spokeIntegrations
+                ?.filter(s => 
+                  s.id !== spokeId && // Exclude current integration
+                  s.categories.some(cat => spoke.categories.includes(cat)) // Match at least one category
+                )
+                .slice(0, 3) // Take only 3
+                .map(relatedSpoke => (
+                  <Card 
+                    key={relatedSpoke.id} 
+                    className="hover:shadow-lg transition-shadow cursor-pointer"
+                    onClick={() => setLocation(`/integration?hub=${hubId}&spoke=${relatedSpoke.id}`)}
+                  >
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-4 mb-4">
+                        <img 
+                          src={relatedSpoke.logo} 
+                          alt={relatedSpoke.name} 
+                          className="w-12 h-12 object-contain"
+                        />
+                        <div>
+                          <h3 className="font-semibold">{relatedSpoke.name}</h3>
+                          <p className="text-sm text-muted-foreground line-clamp-1">
+                            {relatedSpoke.description}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {relatedSpoke.categories.map(cat => (
+                          <Badge key={cat} variant="secondary" className="text-xs">
+                            {cat}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+            </div>
+          </CardContent>
+        </Card>
+
         {/* CTA Section */}
         <Card className="bg-primary text-primary-foreground">
           <CardContent className="p-8">

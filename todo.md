@@ -135,3 +135,9 @@
 - [x] Add Vimeo video embed (https://vimeo.com/1131345189) to About Us page
 - [x] Position video appropriately in page layout
 
+
+## Add Related Integrations Section
+- [x] Create algorithm to find 3 related integrations based on category matching
+- [x] Add Related Integrations section to IntegrationDetail page
+- [x] Display related integration cards with logos and links
+- [x] Exclude current integration from suggestions
