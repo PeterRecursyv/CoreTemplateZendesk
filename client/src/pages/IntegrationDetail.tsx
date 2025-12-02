@@ -20,12 +20,33 @@ export default function IntegrationDetail() {
   const hubId = params.get("hub");
   const spokeId = params.get("spoke");
 
-  // Load configuration
-  const { data: hubVendor } = trpc.config.hubVendor.useQuery();
-  const { data: spokeIntegrations } = trpc.config.spokeIntegrations.useQuery();
-  const { data: branding } = trpc.config.branding.useQuery();
+  // Load configuration with optimized queries
+  const { data: hubVendor } = trpc.config.hubVendor.useQuery(undefined, {
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    refetchOnWindowFocus: false,
+  });
+  const { data: spoke } = trpc.config.spokeIntegrationDetail.useQuery(
+    { id: spokeId || '' },
+    { 
+      enabled: !!spokeId,
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      refetchOnWindowFocus: false,
+    }
+  );
+  const { data: relatedIntegrations } = trpc.config.relatedIntegrations.useQuery(
+    { spokeId: spokeId || '', limit: 3 },
+    { 
+      enabled: !!spokeId,
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      refetchOnWindowFocus: false,
+    }
+  );
+  const { data: branding } = trpc.config.branding.useQuery(undefined, {
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    refetchOnWindowFocus: false,
+  });
 
-  const spoke = spokeIntegrations?.find(s => s.id === spokeId);
+  // spoke is now loaded directly via spokeIntegrationDetail query
   
   if (!hubVendor || !spoke) {
     return (
@@ -391,13 +412,8 @@ export default function IntegrationDetail() {
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-3 gap-6">
-              {spokeIntegrations
-                ?.filter(s => 
-                  s.id !== spokeId && // Exclude current integration
-                  s.categories.some(cat => spoke.categories.includes(cat)) // Match at least one category
-                )
-                .slice(0, 3) // Take only 3
-                .map(relatedSpoke => (
+              {relatedIntegrations && relatedIntegrations.length > 0 ? (
+                relatedIntegrations.map(relatedSpoke => (
                   <Card 
                     key={relatedSpoke.id} 
                     className="hover:shadow-lg transition-shadow cursor-pointer"
@@ -426,7 +442,12 @@ export default function IntegrationDetail() {
                       </div>
                     </CardContent>
                   </Card>
-                ))}
+                ))
+              ) : (
+                <p className="text-muted-foreground col-span-3 text-center py-8">
+                  No related integrations found.
+                </p>
+              )}
             </div>
           </CardContent>
         </Card>

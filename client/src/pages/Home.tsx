@@ -9,9 +9,19 @@ export default function Home() {
   const [, setLocation] = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
 
-  const { data: hubVendor } = trpc.config.hubVendor.useQuery();
-  const { data: spokeIntegrations } = trpc.config.spokeIntegrations.useQuery();
-  const { data: branding } = trpc.config.branding.useQuery();
+  // Use lightweight list endpoint and optimize queries to prevent excessive refetching
+  const { data: hubVendor } = trpc.config.hubVendor.useQuery(undefined, {
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    refetchOnWindowFocus: false,
+  });
+  const { data: spokeIntegrations } = trpc.config.spokeIntegrationsList.useQuery(undefined, {
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    refetchOnWindowFocus: false,
+  });
+  const { data: branding } = trpc.config.branding.useQuery(undefined, {
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    refetchOnWindowFocus: false,
+  });
 
   const integrations = spokeIntegrations || [];
 

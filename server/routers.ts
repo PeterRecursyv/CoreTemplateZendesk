@@ -24,6 +24,61 @@ export const appRouter = router({
       const hubVendorId = getCurrentHubVendorId();
       return loadHubVendor(hubVendorId);
     }),
+    // Lightweight list for homepage - only essential fields
+    spokeIntegrationsList: publicProcedure.query(async () => {
+      const { loadHubVendor, getCurrentHubVendorId, getHubSpokeIntegrations } = await import('./config-loader');
+      const hubVendorId = getCurrentHubVendorId();
+      const hubVendor = loadHubVendor(hubVendorId);
+      const integrations = getHubSpokeIntegrations(hubVendor);
+      // Return only essential fields for listing
+      return integrations.map(i => ({
+        id: i.id,
+        name: i.name,
+        logo: i.logo,
+        description: i.description,
+        categories: i.categories,
+        available: i.available
+      }));
+    }),
+    // Get single integration detail
+    spokeIntegrationDetail: publicProcedure
+      .input((val: unknown) => val as { id: string })
+      .query(async ({ input }) => {
+        const { loadHubVendor, getCurrentHubVendorId, getHubSpokeIntegrations } = await import('./config-loader');
+        const hubVendorId = getCurrentHubVendorId();
+        const hubVendor = loadHubVendor(hubVendorId);
+        const integrations = getHubSpokeIntegrations(hubVendor);
+        return integrations.find(i => i.id === input.id);
+      }),
+    // Get related integrations based on category matching
+    relatedIntegrations: publicProcedure
+      .input((val: unknown) => val as { spokeId: string; limit?: number })
+      .query(async ({ input }) => {
+        const { loadHubVendor, getCurrentHubVendorId, getHubSpokeIntegrations } = await import('./config-loader');
+        const hubVendorId = getCurrentHubVendorId();
+        const hubVendor = loadHubVendor(hubVendorId);
+        const integrations = getHubSpokeIntegrations(hubVendor);
+        const currentIntegration = integrations.find(i => i.id === input.spokeId);
+        if (!currentIntegration) return [];
+        
+        // Find integrations with matching categories
+        const related = integrations
+          .filter(i => 
+            i.id !== input.spokeId && 
+            i.categories.some(cat => currentIntegration.categories.includes(cat))
+          )
+          .slice(0, input.limit || 3)
+          .map(i => ({
+            id: i.id,
+            name: i.name,
+            logo: i.logo,
+            description: i.description,
+            categories: i.categories
+          }));
+        
+        return related;
+      }),
+    // Legacy endpoint - kept for backward compatibility
     spokeIntegrations: publicProcedure.query(async () => {
       const { loadHubVendor, getCurrentHubVendorId, getHubSpokeIntegrations } = await import('./config-loader');
       const hubVendorId = getCurrentHubVendorId();

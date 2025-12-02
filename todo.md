@@ -141,3 +141,16 @@
 - [x] Add Related Integrations section to IntegrationDetail page
 - [x] Display related integration cards with logos and links
 - [x] Exclude current integration from suggestions
+
+
+## Performance Issue Investigation
+- [x] Check for infinite loops or excessive re-renders in React components
+- [x] Review tRPC queries for unnecessary refetching
+- [x] Check for memory leaks in useEffect hooks
+- [x] Optimize large data rendering (27 integrations)
+- [x] Review configuration loading performance
+- [x] Create lightweight spokeIntegrationsList endpoint for homepage
+- [x] Create spokeIntegrationDetail endpoint for single integration loading
+- [x] Create relatedIntegrations endpoint for server-side filtering
+- [x] Add staleTime and refetchOnWindowFocus configuration to all queries
+- [x] Replace client-side related integrations filtering with server-side query
