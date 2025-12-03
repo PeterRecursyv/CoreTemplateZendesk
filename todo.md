@@ -238,5 +238,5 @@
 - [x] Verify logo path is correct and accessible - /assets/logos/hubspot.png exists
 - [x] Add loading state to prevent flash of wrong vendor - added isLoadingHub check
 - [x] Remove Zendesk fallback text from title and description
-- [ ] Test on multiple devices/browsers
-- [ ] Push changes to GitHub
+- [ ] Test on multiple devices/browsers (requires user testing)
+- [x] Push changes to GitHub (commit 6be21c9)
