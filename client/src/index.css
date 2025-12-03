@@ -201,3 +201,20 @@
   }
 }
 
+/* Hide Manus watermark/branding */
+[class*="manus-watermark"],
+[class*="manus-branding"],
+[id*="manus-watermark"],
+[id*="manus-branding"],
+a[href*="manus.im"]:not([class]),
+div:has(> a[href*="manus.im"]:only-child),
+footer a[href*="manus.im"],
+.watermark,
+[data-watermark],
+[data-branding] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}

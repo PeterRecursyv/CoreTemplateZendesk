@@ -207,3 +207,10 @@
 - [ ] Update app logo to HubSpot logo via Settings (manual step required)
 - [x] Enhance HubSpot data points with marketing-specific entities (added 9 new data points)
 - [x] Push latest code to GitHub repository (successfully pushed commit 8ec561f)
+
+
+## Remove Manus Watermark
+- [x] Find "Made with Manus" watermark in code (not in source, injected by platform)
+- [ ] Add CSS to hide injected watermark elements
+- [ ] Test website without watermark
+- [ ] Push changes to GitHub
