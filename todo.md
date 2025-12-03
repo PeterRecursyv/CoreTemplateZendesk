@@ -200,3 +200,10 @@
 - [x] Update tests to reflect HubSpot as hub vendor
 - [x] Test marketplace with HubSpot as hub - all 13 tests passing
 - [ ] User needs to manually update app title and logo in Settings > General
+
+
+## Complete HubSpot Marketplace Setup
+- [ ] Update app title to "HubSpot Integration Hub" via Settings
+- [ ] Update app logo to HubSpot logo via Settings
+- [ ] Enhance HubSpot data points with marketing-specific entities
+- [ ] Push latest code to GitHub repository
