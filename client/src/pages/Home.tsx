@@ -10,7 +10,7 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Use lightweight list endpoint and optimize queries to prevent excessive refetching
-  const { data: hubVendor } = trpc.config.hubVendor.useQuery(undefined, {
+  const { data: hubVendor, isLoading: isLoadingHub } = trpc.config.hubVendor.useQuery(undefined, {
     staleTime: 5 * 60 * 1000, // 5 minutes
     refetchOnWindowFocus: false,
   });
@@ -78,19 +78,23 @@ export default function Home() {
         <div className="w-2/5 bg-gradient-to-br from-blue-600 to-blue-800 text-white p-12 flex flex-col justify-center sticky top-[73px] h-[calc(100vh-73px)]">
           <div className="max-w-xl">
             <div className="mb-8">
-              <img
-                src={hubVendor?.logo || "/assets/logos/zendesk-logo.png"}
-                alt={hubVendor?.name || "Hub"}
-                className="h-24 w-auto object-contain bg-white rounded-xl p-4 shadow-2xl"
-              />
+              {isLoadingHub ? (
+                <div className="h-24 w-48 bg-slate-200 rounded-xl animate-pulse" />
+              ) : (
+                <img
+                  src={hubVendor?.logo}
+                  alt={hubVendor?.name || "Hub"}
+                  className="h-24 w-auto object-contain bg-white rounded-xl p-4 shadow-2xl"
+                />
+              )}
             </div>
             
             <h1 className="text-4xl font-bold mb-4">
-              {hubVendor?.name || "Zendesk"} Integration Hub
+              {hubVendor?.name ? `${hubVendor.name} Integration Hub` : "Integration Hub"}
             </h1>
             
             <p className="text-xl text-blue-100 mb-8">
-              {hubVendor?.description || "Customer service and engagement platform"}
+              {hubVendor?.description || "Seamless data synchronization"}
             </p>
 
             <div className="space-y-4 mb-8">
@@ -121,8 +125,7 @@ export default function Home() {
                 </>
               )}
             </div>
-
-            <div className="bg-blue-700/50 rounded-lg p-6 backdrop-blur-sm">
+            <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
               <p className="text-sm text-blue-100 mb-2">Available Integrations</p>
               <p className="text-3xl font-bold">{integrations.length}</p>
               <p className="text-sm text-blue-200 mt-2">Connect with your favorite tools</p>

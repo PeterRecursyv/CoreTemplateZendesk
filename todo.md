@@ -230,3 +230,13 @@
 - [x] Add "per month" text to selected plan display in purchase flow
 - [x] Test pricing selection to verify fix (all pricing tiers show "per month")
 - [x] Push changes to GitHub (commit f3065e8)
+
+
+## Fix Hub Vendor Loading Issues
+- [x] Fix Zendesk flashing before HubSpot loads (race condition) - added loading skeleton
+- [x] Fix HubSpot logo not displaying on some devices - removed fallback to Zendesk logo
+- [x] Verify logo path is correct and accessible - /assets/logos/hubspot.png exists
+- [x] Add loading state to prevent flash of wrong vendor - added isLoadingHub check
+- [x] Remove Zendesk fallback text from title and description
+- [ ] Test on multiple devices/browsers
+- [ ] Push changes to GitHub
