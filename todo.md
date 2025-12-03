@@ -240,3 +240,12 @@
 - [x] Remove Zendesk fallback text from title and description
 - [ ] Test on multiple devices/browsers (requires user testing)
 - [x] Push changes to GitHub (commit 6be21c9)
+
+
+## Add Loading Skeletons and Optimize Page Load
+- [x] Add loading skeleton for integration cards on homepage
+- [x] Show placeholder cards (6 skeleton cards) while spoke integrations are loading
+- [x] Optimize initial page load with data prefetching
+- [x] Add prefetch on mount to cache data for instant subsequent loads
+- [x] Test loading states and performance improvements
+- [ ] Push changes to GitHub

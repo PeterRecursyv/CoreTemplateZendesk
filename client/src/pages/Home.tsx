@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { Input } from "@/components/ui/input";
@@ -8,13 +8,21 @@ import { Search, ArrowRight, CheckCircle2 } from "lucide-react";
 export default function Home() {
   const [, setLocation] = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
+  const utils = trpc.useUtils();
+
+  // Prefetch data on mount for instant subsequent loads
+  useEffect(() => {
+    utils.config.hubVendor.prefetch();
+    utils.config.spokeIntegrationsList.prefetch();
+    utils.config.branding.prefetch();
+  }, [utils]);
 
   // Use lightweight list endpoint and optimize queries to prevent excessive refetching
   const { data: hubVendor, isLoading: isLoadingHub } = trpc.config.hubVendor.useQuery(undefined, {
     staleTime: 5 * 60 * 1000, // 5 minutes
     refetchOnWindowFocus: false,
   });
-  const { data: spokeIntegrations } = trpc.config.spokeIntegrationsList.useQuery(undefined, {
+  const { data: spokeIntegrations, isLoading: isLoadingIntegrations } = trpc.config.spokeIntegrationsList.useQuery(undefined, {
     staleTime: 5 * 60 * 1000, // 5 minutes
     refetchOnWindowFocus: false,
   });
@@ -161,7 +169,30 @@ export default function Home() {
 
             {/* Integrations List */}
             <div className="space-y-3">
-              {filteredIntegrations.map((integration: any) => (
+              {isLoadingIntegrations ? (
+                // Loading skeletons
+                Array.from({ length: 6 }).map((_, idx) => (
+                  <div key={idx} className="bg-white rounded-lg border-2 border-slate-200 animate-pulse">
+                    <div className="p-6 flex items-center gap-6">
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 bg-slate-200 rounded-lg" />
+                      </div>
+                      <div className="flex-1 min-w-0 space-y-3">
+                        <div className="h-5 bg-slate-200 rounded w-1/3" />
+                        <div className="h-4 bg-slate-200 rounded w-2/3" />
+                        <div className="flex gap-2">
+                          <div className="h-6 bg-slate-200 rounded-full w-16" />
+                          <div className="h-6 bg-slate-200 rounded-full w-20" />
+                        </div>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <div className="h-9 w-32 bg-slate-200 rounded" />
+                      </div>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                filteredIntegrations.map((integration: any) => (
                 <div
                   key={integration.id}
                   onClick={() => handleIntegrationClick(integration)}
@@ -209,9 +240,10 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              ))}
+              ))
+              )}
 
-              {searchQuery && filteredIntegrations.length === 0 && (
+              {!isLoadingIntegrations && searchQuery && filteredIntegrations.length === 0 && (
                 <div className="text-center py-12">
                   <p className="text-slate-500 text-lg">No integrations found matching "{searchQuery}"</p>
                 </div>
