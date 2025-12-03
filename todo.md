@@ -211,6 +211,6 @@
 
 ## Remove Manus Watermark
 - [x] Find "Made with Manus" watermark in code (not in source, injected by platform)
-- [ ] Add CSS to hide injected watermark elements
-- [ ] Test website without watermark
-- [ ] Push changes to GitHub
+- [x] Add CSS to hide injected watermark elements
+- [x] Test website without watermark (CSS applied via HMR)
+- [x] Push changes to GitHub (commit 279f417)
