@@ -32,6 +32,7 @@ export const purchases = mysqlTable("purchases", {
   customerEmail: varchar("customerEmail", { length: 320 }).notNull(),
   
   // Step 2: Data types included
+  selectedDataTypes: text("selectedDataTypes"),
   otherDataTypes: text("otherDataTypes"),
   
   // Step 3: Tariff details

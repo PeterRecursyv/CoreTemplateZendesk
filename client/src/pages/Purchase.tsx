@@ -38,6 +38,7 @@ export default function Purchase() {
 
   // Step 2 data (Data Types Included)
   const [step2Data, setStep2Data] = useState({
+    selectedDataTypes: [] as string[],
     otherDataTypes: "",
   });
 
@@ -120,9 +121,15 @@ export default function Purchase() {
       return;
     }
 
+    if (step2Data.selectedDataTypes.length === 0) {
+      alert("Please select at least one data type to include in the integration.");
+      return;
+    }
+
     try {
       await updatePurchase.mutateAsync({
         id: purchaseId,
+        selectedDataTypes: step2Data.selectedDataTypes.join(", "),
         otherDataTypes: step2Data.otherDataTypes,
       });
 
@@ -361,14 +368,53 @@ export default function Purchase() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                {/* Standard Data Points Included */}
+                {/* Data Type Selection */}
                 <div>
-                  <h3 className="text-base font-semibold mb-4">Standard Data Types Included</h3>
+                  <h3 className="text-base font-semibold mb-4">Please select items to be included in the integration:</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {hubVendor?.dataPoints?.map((dataPoint: string) => (
-                      <div key={dataPoint} className="flex items-start gap-2 p-3 bg-muted/50 rounded-lg">
-                        <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm font-medium">{dataPoint}</span>
+                    {[
+                      "GUID",
+                      "Assigned Users",
+                      "Account",
+                      "Contact",
+                      "Tickets",
+                      "Ticket Notes",
+                      "Ticket Attachments",
+                      "Time Entries",
+                      "Opportunities",
+                      "Opportunity Notes",
+                      "Opportunity Attachments",
+                      "Deals",
+                      "Alerts",
+                      "CMDB (Assets)",
+                      "Tasks",
+                      "Line Items"
+                    ].map((dataType) => (
+                      <div key={dataType} className="flex items-start gap-3 p-3 bg-muted/50 rounded-lg">
+                        <Checkbox
+                          id={`datatype-${dataType}`}
+                          checked={step2Data.selectedDataTypes.includes(dataType)}
+                          onCheckedChange={(checked) => {
+                            if (checked) {
+                              setStep2Data({
+                                ...step2Data,
+                                selectedDataTypes: [...step2Data.selectedDataTypes, dataType]
+                              });
+                            } else {
+                              setStep2Data({
+                                ...step2Data,
+                                selectedDataTypes: step2Data.selectedDataTypes.filter(dt => dt !== dataType)
+                              });
+                            }
+                          }}
+                          className="mt-0.5"
+                        />
+                        <Label
+                          htmlFor={`datatype-${dataType}`}
+                          className="text-sm font-medium cursor-pointer flex-1"
+                        >
+                          {dataType}
+                        </Label>
                       </div>
                     ))}
                   </div>

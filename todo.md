@@ -214,3 +214,13 @@
 - [x] Add CSS to hide injected watermark elements
 - [x] Test website without watermark (CSS applied via HMR)
 - [x] Push changes to GitHub (commit 279f417)
+
+
+## Organize Vendors by Category and Update Data Types
+- [x] Extract all vendors and their categories from spoke-integrations.json
+- [x] Create categorized vendor list document
+- [x] Replace static data types display with checkbox selection
+- [x] Add 16 standard data type checkboxes to purchase flow step 2
+- [x] Keep free-text field for custom data type requests
+- [x] Update database schema to store selected data types (added selectedDataTypes JSON field)
+- [x] Test checkbox selection and form submission (validated successfully)
