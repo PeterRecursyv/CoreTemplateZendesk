@@ -36,8 +36,13 @@ export default function Purchase() {
     customerEmail: "",
   });
 
-  // Step 2 data
+  // Step 2 data (Data Types Included)
   const [step2Data, setStep2Data] = useState({
+    otherDataTypes: "",
+  });
+
+  // Step 3 data (Tariff Details)
+  const [step3Data, setStep3Data] = useState({
     selectedPlan: "",
   });
 
@@ -55,13 +60,13 @@ export default function Purchase() {
 
   // Set selected tier based on plan selection
   useEffect(() => {
-    if (step2Data.selectedPlan && pricingConfig) {
-      const plan = pricingConfig.plans?.find((p: any) => p.id === step2Data.selectedPlan);
+    if (step3Data.selectedPlan && pricingConfig) {
+      const plan = pricingConfig.plans?.find((p: any) => p.id === step3Data.selectedPlan);
       if (plan) {
         setSelectedTier(plan);
       }
     }
-  }, [step2Data.selectedPlan, pricingConfig]);
+  }, [step3Data.selectedPlan, pricingConfig]);
 
   const handleStep1Submit = async () => {
     if (!step1Data.customerName || !step1Data.customerEmail) {
@@ -109,12 +114,7 @@ export default function Purchase() {
     }
   };
 
-   const handleStep2Submit = async () => {
-    if (!step2Data.selectedPlan) {
-      alert("Please select a plan");
-      return;
-    }
-
+  const handleStep2Submit = async () => {
     if (!purchaseId) {
       alert("Purchase ID not found. Please start over.");
       return;
@@ -122,10 +122,8 @@ export default function Purchase() {
 
     try {
       await updatePurchase.mutateAsync({
-        purchaseId,
-        selectedPlan: step2Data.selectedPlan,
-        pricingTier: step2Data.selectedPlan,
-        paymentAmount: selectedTier?.price.toString() || "0",
+        id: purchaseId,
+        otherDataTypes: step2Data.otherDataTypes,
       });
 
       // Send email notification for step 2
@@ -137,8 +135,7 @@ export default function Purchase() {
           ...step2Data,
           hubVendor: hubName || '',
           spokeIntegration: spokeName || '',
-          pricingTier: selectedTier?.name || '',
-          price: selectedTier?.price || 0,
+          dataPointsIncluded: hubVendor?.dataPoints || [],
         },
       });
 
@@ -150,6 +147,47 @@ export default function Purchase() {
   };
 
   const handleStep3Submit = async () => {
+    if (!step3Data.selectedPlan) {
+      alert("Please select a plan");
+      return;
+    }
+
+    if (!purchaseId) {
+      alert("Purchase ID not found. Please start over.");
+      return;
+    }
+
+    try {
+      await updatePurchase.mutateAsync({
+        id: purchaseId,
+        selectedPlan: step3Data.selectedPlan,
+        pricingTier: step3Data.selectedPlan,
+        paymentAmount: selectedTier?.price.toString() || "0",
+      });
+
+      // Send email notification for step 3
+      await sendNotification.mutateAsync({
+        purchaseId,
+        step: 3,
+        data: {
+          ...step1Data,
+          ...step2Data,
+          ...step3Data,
+          hubVendor: hubName || '',
+          spokeIntegration: spokeName || '',
+          pricingTier: selectedTier?.name || '',
+          price: selectedTier?.price || 0,
+        },
+      });
+
+      setCurrentStep(4);
+    } catch (error) {
+      console.error("Failed to update purchase:", error);
+      alert("Failed to save details. Please try again.");
+    }
+  };
+
+  const handleStep4Submit = async () => {
     if (!termsAccepted) {
       alert("Please accept the terms and conditions to continue");
       return;
@@ -167,13 +205,14 @@ export default function Purchase() {
         termsAcceptedAt: new Date(),
       });
 
-      // Send email notification for step 3
+      // Send email notification for step 4
       await sendNotification.mutateAsync({
         purchaseId,
-        step: 3,
+        step: 4,
         data: {
           ...step1Data,
           ...step2Data,
+          ...step3Data,
           hubVendor: hubName || '',
           spokeIntegration: spokeName || '',
           pricingTier: selectedTier?.name || '',
@@ -183,7 +222,7 @@ export default function Purchase() {
         },
       });
 
-      setCurrentStep(4);
+      setCurrentStep(5);
     } catch (error) {
       console.error("Failed to update terms:", error);
       alert("Failed to save terms acceptance. Please try again.");
@@ -192,9 +231,10 @@ export default function Purchase() {
 
   const steps = [
     { number: 1, title: "Integration Details", description: "Select your integration" },
-    { number: 2, title: "Business Details", description: "Tell us about your needs" },
-    { number: 3, title: "Terms & Conditions", description: "Review and accept" },
-    { number: 4, title: "Payment", description: "Complete your purchase" },
+    { number: 2, title: "Data Types Included", description: "Review included entities" },
+    { number: 3, title: "Tariff Details", description: "Select your plan" },
+    { number: 4, title: "Terms & Conditions", description: "Review and accept" },
+    { number: 5, title: "Payment", description: "Complete your purchase" },
   ];
 
   return (
@@ -311,12 +351,73 @@ export default function Purchase() {
             </Card>
           )}
 
-          {/* Step 2: Business Details & Pricing */}
+          {/* Step 2: Data Types Included */}
           {currentStep === 2 && (
             <Card>
               <CardHeader>
-                <CardTitle>Business Details</CardTitle>
-                <CardDescription>Tell us about your integration requirements</CardDescription>
+                <CardTitle>Data Types Included</CardTitle>
+                <CardDescription>
+                  The following data types are included in your {hubName} ↔ {spokeName} integration
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {/* Standard Data Points Included */}
+                <div>
+                  <h3 className="text-base font-semibold mb-4">Standard Data Types Included</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {hubVendor?.dataPoints?.map((dataPoint: string) => (
+                      <div key={dataPoint} className="flex items-start gap-2 p-3 bg-muted/50 rounded-lg">
+                        <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-sm font-medium">{dataPoint}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Other Data Types Field */}
+                <div className="space-y-2">
+                  <Label htmlFor="otherDataTypes" className="text-base font-semibold">
+                    Other Data Types to Include in this Integration
+                  </Label>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    Please specify any additional data types or entities you would like to include in this integration.
+                  </p>
+                  <Textarea
+                    id="otherDataTypes"
+                    placeholder="e.g., Custom fields, additional modules, specific data sets..."
+                    value={step2Data.otherDataTypes}
+                    onChange={(e) => setStep2Data({ ...step2Data, otherDataTypes: e.target.value })}
+                    rows={4}
+                    className="resize-none"
+                  />
+                </div>
+
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <p className="text-sm text-blue-900">
+                    <strong>Note:</strong> Our team will review your requirements and confirm the feasibility of including additional data types during the setup process.
+                  </p>
+                </div>
+
+                <div className="flex justify-between">
+                  <Button variant="outline" onClick={() => setCurrentStep(1)}>
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    Back
+                  </Button>
+                  <Button onClick={handleStep2Submit} disabled={updatePurchase.isPending}>
+                    {updatePurchase.isPending ? "Saving..." : "Continue"}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Step 3: Tariff Details */}
+          {currentStep === 3 && (
+            <Card>
+              <CardHeader>
+                <CardTitle>Tariff Details</CardTitle>
+                <CardDescription>Select your integration plan</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-6">
@@ -334,9 +435,9 @@ export default function Purchase() {
                     {pricingConfig?.plans?.map((plan: any) => (
                       <div
                         key={plan.id}
-                        onClick={() => setStep2Data({ selectedPlan: plan.id })}
+                        onClick={() => setStep3Data({ selectedPlan: plan.id })}
                         className={`border-2 rounded-lg p-4 cursor-pointer transition-all ${
-                          step2Data.selectedPlan === plan.id
+                          step3Data.selectedPlan === plan.id
                             ? "border-primary bg-primary/5"
                             : "border-slate-200 hover:border-primary/50"
                         }`}
@@ -378,7 +479,7 @@ export default function Purchase() {
                 {/* Selected Plan Summary */}
                 {selectedTier && (
                   <div className="border-t pt-6">
-                    <h3 className="font-semibold mb-4">Recommended Plan</h3>
+                    <h3 className="font-semibold mb-4">Selected Plan</h3>
                     <Card className="border-primary/50 bg-primary/5">
                       <CardHeader>
                         <div className="flex items-start justify-between">
@@ -386,7 +487,7 @@ export default function Purchase() {
                             <CardTitle className="text-xl">{selectedTier.name}</CardTitle>
                             <CardDescription>{selectedTier.description}</CardDescription>
                           </div>
-                          <Badge variant="default">Recommended</Badge>
+                          <Badge variant="default">Selected</Badge>
                         </div>
                         <div className="mt-4">
                           <span className="text-3xl font-bold">${selectedTier.price}</span>
@@ -408,11 +509,11 @@ export default function Purchase() {
                 )}
 
                 <div className="flex justify-between">
-                  <Button variant="outline" onClick={() => setCurrentStep(1)}>
+                  <Button variant="outline" onClick={() => setCurrentStep(2)}>
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     Back
                   </Button>
-                  <Button onClick={handleStep2Submit} disabled={updatePurchase.isPending || !selectedTier}>
+                  <Button onClick={handleStep3Submit} disabled={updatePurchase.isPending || !selectedTier}>
                     {updatePurchase.isPending ? "Saving..." : "Continue"}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -421,8 +522,8 @@ export default function Purchase() {
             </Card>
           )}
 
-          {/* Step 3: Terms & Conditions */}
-          {currentStep === 3 && (
+          {/* Step 4: Terms & Conditions */}
+          {currentStep === 4 && (
             <Card>
               <CardHeader>
                 <CardTitle>Terms & Conditions</CardTitle>
@@ -445,11 +546,11 @@ export default function Purchase() {
                 </div>
 
                 <div className="flex justify-between">
-                  <Button variant="outline" onClick={() => setCurrentStep(2)}>
+                  <Button variant="outline" onClick={() => setCurrentStep(3)}>
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     Back
                   </Button>
-                  <Button onClick={handleStep3Submit} disabled={!termsAccepted || updatePurchase.isPending}>
+                  <Button onClick={handleStep4Submit} disabled={!termsAccepted || updatePurchase.isPending}>
                     {updatePurchase.isPending ? "Processing..." : "Accept & Continue"}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -458,8 +559,8 @@ export default function Purchase() {
             </Card>
           )}
 
-          {/* Step 4: Payment (Placeholder) */}
-          {currentStep === 4 && (
+          {/* Step 5: Payment (Placeholder) */}
+          {currentStep === 5 && (
             <Card>
               <CardHeader>
                 <CardTitle>Payment</CardTitle>

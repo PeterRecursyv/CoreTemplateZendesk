@@ -31,19 +31,23 @@ export const purchases = mysqlTable("purchases", {
   customerName: varchar("customerName", { length: 255 }).notNull(),
   customerEmail: varchar("customerEmail", { length: 320 }).notNull(),
   
-  // Step 2: Entity details
+  // Step 2: Data types included
+  otherDataTypes: text("otherDataTypes"),
+  
+  // Step 3: Tariff details
   companyName: varchar("companyName", { length: 255 }),
   entityType: varchar("entityType", { length: 64 }),
   syncFrequency: varchar("syncFrequency", { length: 64 }),
   dataVolume: varchar("dataVolume", { length: 64 }),
   pricingTier: varchar("pricingTier", { length: 64 }),
+  selectedPlan: varchar("selectedPlan", { length: 64 }),
   additionalNotes: text("additionalNotes"),
   
-  // Step 3: Terms
+  // Step 4: Terms
   termsAccepted: varchar("termsAccepted", { length: 10 }).default("false").notNull(),
   termsAcceptedAt: timestamp("termsAcceptedAt"),
   
-  // Step 4: Payment
+  // Step 5: Payment
   stripeSessionId: varchar("stripeSessionId", { length: 255 }),
   paymentStatus: mysqlEnum("paymentStatus", ["pending", "completed", "failed"]).default("pending").notNull(),
   paymentAmount: varchar("paymentAmount", { length: 20 }),

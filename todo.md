@@ -164,3 +164,15 @@
 - [x] Update tests to verify 28 integrations (27 + Zendesk)
 - [x] Test Zendesk-to-Zendesk integration detail page
 - [x] Remove duplicate Zendesk entry that was already in the file
+
+
+## Update Purchase Flow with Data Types Step
+- [x] Add new step between integration details and tariff selection
+- [x] Display hub vendor dataPoints (entities included in integration)
+- [x] Add free-text field: "Other Data Types to Include in this Integration"
+- [x] Rename "Business Details" step to "Tariff Details"
+- [x] Update step numbering (now 5 steps instead of 4)
+- [x] Update database schema to add otherDataTypes and selectedPlan fields
+- [x] Run pnpm db:push to apply schema changes
+- [x] Test complete purchase flow with new step
+- [ ] Update email notifications to include new data types field
