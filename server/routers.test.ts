@@ -148,12 +148,12 @@ describe('Config Router - Performance Optimizations', () => {
   });
 
   describe('hubVendor', () => {
-    it('should return Zendesk hub vendor configuration', async () => {
+    it('should return HubSpot hub vendor configuration', async () => {
       const result = await caller.config.hubVendor();
 
       expect(result).toBeDefined();
-      expect(result.id).toBe('zendesk');
-      expect(result.name).toBe('Zendesk');
+      expect(result.id).toBe('hubspot');
+      expect(result.name).toBe('HubSpot');
       expect(result.logo).toBeDefined();
       expect(result.spokeIntegrations).toBeDefined();
       expect(Array.isArray(result.spokeIntegrations)).toBe(true);

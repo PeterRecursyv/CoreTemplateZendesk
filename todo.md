@@ -190,3 +190,13 @@
 - [x] Option 2: Manual Process - "Recursyv shall contact you to confirm requirements, provide a bespoke proposal (which may include a Setup) for signature. A project kick-off call shall then be scheduled."
 - [x] Update purchase completion logic to handle both payment methods
 - [x] Test both payment flows
+
+
+## Change Hub Vendor from Zendesk to HubSpot
+- [x] Create HubSpot hub vendor configuration file
+- [x] Update default hub vendor in config-loader to HubSpot
+- [x] Keep Zendesk in spoke integrations list (available as integration option)
+- [x] HubSpot already included in spoke integrations for hub-to-hub scenarios
+- [x] Update tests to reflect HubSpot as hub vendor
+- [x] Test marketplace with HubSpot as hub - all 13 tests passing
+- [ ] User needs to manually update app title and logo in Settings > General

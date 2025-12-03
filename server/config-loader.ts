@@ -28,9 +28,9 @@ export function loadPricing(): PricingConfig {
   return JSON.parse(data);
 }
 
-// Get the current hub vendor from environment or default to zendesk
+// Get the current hub vendor from environment or default to hubspot
 export function getCurrentHubVendorId(): string {
-  return process.env.TEMPLATE_HUB_VENDOR || 'zendesk';
+  return process.env.TEMPLATE_HUB_VENDOR || 'hubspot';
 }
 
 // Get filtered spoke integrations for the current hub vendor
