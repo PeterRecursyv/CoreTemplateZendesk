@@ -25,6 +25,7 @@
     "Error-free data delivery"
   ],
   "spokeIntegrations": [
+    "zendesk",
     "servicenow",
     "freshservice",
     "jira",

@@ -1,5 +1,13 @@
 [
   {
+    "id": "zendesk",
+    "name": "Zendesk",
+    "description": "Customer service and engagement platform (instance-to-instance sync)",
+    "logo": "/assets/logos/zendesk.png",
+    "categories": ["Support", "Customer-Service", "ITSM"],
+    "available": true
+  },
+  {
     "id": "servicenow",
     "name": "ServiceNow",
     "description": "Enterprise service management solution",
@@ -165,14 +173,6 @@
     "description": "Enterprise resource planning",
     "logo": "/assets/logos/syspro.png",
     "categories": ["ERP", "Manufacturing"],
-    "available": true
-  },
-  {
-    "id": "zendesk",
-    "name": "Zendesk",
-    "description": "Customer service and engagement platform",
-    "logo": "/assets/logos/zendesk.png",
-    "categories": ["Support", "Customer-Service"],
     "available": true
   },
   {

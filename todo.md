@@ -154,3 +154,13 @@
 - [x] Create relatedIntegrations endpoint for server-side filtering
 - [x] Add staleTime and refetchOnWindowFocus configuration to all queries
 - [x] Replace client-side related integrations filtering with server-side query
+
+
+## Add Hub-to-Hub Integration Support
+- [x] Add Zendesk as a spoke integration option
+- [x] Download Zendesk logo for spoke integration (already existed)
+- [x] Update spoke-integrations.json with Zendesk entry
+- [x] Update Zendesk hub vendor config to include itself in spokeIntegrations array
+- [x] Update tests to verify 28 integrations (27 + Zendesk)
+- [x] Test Zendesk-to-Zendesk integration detail page
+- [x] Remove duplicate Zendesk entry that was already in the file
