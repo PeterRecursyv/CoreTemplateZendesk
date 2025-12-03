@@ -203,7 +203,7 @@
 
 
 ## Complete HubSpot Marketplace Setup
-- [ ] Update app title to "HubSpot Integration Hub" via Settings
-- [ ] Update app logo to HubSpot logo via Settings
-- [ ] Enhance HubSpot data points with marketing-specific entities
-- [ ] Push latest code to GitHub repository
+- [ ] Update app title to "HubSpot Integration Hub" via Settings (manual step required)
+- [ ] Update app logo to HubSpot logo via Settings (manual step required)
+- [x] Enhance HubSpot data points with marketing-specific entities (added 9 new data points)
+- [x] Push latest code to GitHub repository (successfully pushed commit 8ec561f)
