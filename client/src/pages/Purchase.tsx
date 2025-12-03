@@ -600,47 +600,100 @@ export default function Purchase() {
                     </div>
                   </div>
 
-                  <div className="mt-8 space-y-3">
-                    <Button 
-                      size="lg" 
-                      className="w-full"
-                      onClick={async () => {
-                        if (!purchaseId) return;
-                        
-                        try {
-                          // Send notification first
-                          await sendNotification.mutateAsync({
-                            purchaseId,
-                            pricingTierName: selectedTier?.name,
-                          });
-                          
-                          // Create Stripe checkout session
-                          const result = await createCheckoutSession.mutateAsync({
-                            purchaseId,
-                            pricingTierName: selectedTier?.name,
-                            successUrl: `${window.location.origin}/purchase-success?session_id={CHECKOUT_SESSION_ID}`,
-                            cancelUrl: `${window.location.origin}/purchase?hub=${hubId}&spoke=${spokeId}&hubName=${hubName}&spokeName=${spokeName}`,
-                          });
-                          
-                          // Redirect to Stripe Checkout
-                          if (result.url) {
-                            window.location.href = result.url;
-                          }
-                        } catch (error) {
-                          console.error('Failed to create checkout session:', error);
-                          alert('Failed to start payment process. Please try again.');
-                        }
-                      }}
-                      disabled={createCheckoutSession.isPending || sendNotification.isPending || !process.env.VITE_STRIPE_PUBLISHABLE_KEY}
-                    >
-                      {createCheckoutSession.isPending || sendNotification.isPending ? 'Processing...' : 'Proceed to Stripe Checkout'}
-                    </Button>
-                    {!process.env.VITE_STRIPE_PUBLISHABLE_KEY && (
-                      <p className="text-xs text-muted-foreground text-center">
-                        Stripe is not configured. Set STRIPE_SECRET_KEY and VITE_STRIPE_PUBLISHABLE_KEY environment variables.
-                      </p>
-                    )}
-                    <Button variant="outline" onClick={() => setLocation("/")}>
+                  <div className="mt-8 space-y-4">
+                    <div className="space-y-3">
+                      <h3 className="font-semibold text-lg">Select Payment Method</h3>
+                      
+                      {/* Stripe Payment Option */}
+                      <div className="border rounded-lg p-4 space-y-3">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-1">
+                            <h4 className="font-medium">Pay with Stripe</h4>
+                            <p className="text-sm text-muted-foreground mt-1">
+                              Secure online payment via credit card or bank transfer
+                            </p>
+                          </div>
+                        </div>
+                        <Button 
+                          size="lg" 
+                          className="w-full"
+                          onClick={async () => {
+                            if (!purchaseId) return;
+                            
+                            try {
+                              // Send notification first
+                              await sendNotification.mutateAsync({
+                                purchaseId,
+                                pricingTierName: selectedTier?.name,
+                              });
+                              
+                              // Create Stripe checkout session
+                              const result = await createCheckoutSession.mutateAsync({
+                                purchaseId,
+                                pricingTierName: selectedTier?.name,
+                                successUrl: `${window.location.origin}/purchase-success?session_id={CHECKOUT_SESSION_ID}`,
+                                cancelUrl: `${window.location.origin}/purchase?hub=${hubId}&spoke=${spokeId}&hubName=${hubName}&spokeName=${spokeName}`,
+                              });
+                              
+                              // Redirect to Stripe Checkout
+                              if (result.url) {
+                                window.location.href = result.url;
+                              }
+                            } catch (error) {
+                              console.error('Failed to create checkout session:', error);
+                              alert('Failed to start payment process. Please try again.');
+                            }
+                          }}
+                          disabled={createCheckoutSession.isPending || sendNotification.isPending || !import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY}
+                        >
+                          {createCheckoutSession.isPending || sendNotification.isPending ? 'Processing...' : 'Proceed to Stripe Checkout'}
+                        </Button>
+                        {!import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY && (
+                          <p className="text-xs text-muted-foreground text-center">
+                            Stripe is not configured. Set STRIPE_SECRET_KEY and VITE_STRIPE_PUBLISHABLE_KEY environment variables.
+                          </p>
+                        )}
+                      </div>
+
+                      {/* Manual Process Option */}
+                      <div className="border rounded-lg p-4 space-y-3">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-1">
+                            <h4 className="font-medium">Bespoke Proposal Process</h4>
+                            <p className="text-sm text-muted-foreground mt-1">
+                              Recursyv shall contact you to confirm requirements, provide a bespoke proposal (which may include a Setup) for signature. A project kick-off call shall then be scheduled.
+                            </p>
+                          </div>
+                        </div>
+                        <Button 
+                          size="lg" 
+                          variant="outline"
+                          className="w-full"
+                          onClick={async () => {
+                            if (!purchaseId) return;
+                            
+                            try {
+                              // Send notification for manual process
+                              await sendNotification.mutateAsync({
+                                purchaseId,
+                                pricingTierName: selectedTier?.name,
+                              });
+                              
+                              // Redirect to success page
+                              setLocation(`/purchase-success?purchaseId=${purchaseId}&manual=true`);
+                            } catch (error) {
+                              console.error('Failed to submit request:', error);
+                              alert('Failed to submit request. Please try again.');
+                            }
+                          }}
+                          disabled={sendNotification.isPending}
+                        >
+                          {sendNotification.isPending ? 'Submitting...' : 'Request Bespoke Proposal'}
+                        </Button>
+                      </div>
+                    </div>
+
+                    <Button variant="ghost" onClick={() => setLocation("/")} className="w-full">
                       Return to Marketplace
                     </Button>
                   </div>

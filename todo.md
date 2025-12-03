@@ -176,3 +176,17 @@
 - [x] Run pnpm db:push to apply schema changes
 - [x] Test complete purchase flow with new step
 - [ ] Update email notifications to include new data types field
+
+
+## Fix Purchase Flow Environment Variable Error
+- [x] Replace process.env.VITE_STRIPE_PUBLISHABLE_KEY with import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY
+- [x] Check for any other process.env references in client-side code
+- [x] Test purchase flow to verify fix
+
+
+## Update Payment Page with Two Options
+- [x] Add payment method selection on step 5 (Payment)
+- [x] Option 1: Stripe Payment - existing Stripe checkout flow
+- [x] Option 2: Manual Process - "Recursyv shall contact you to confirm requirements, provide a bespoke proposal (which may include a Setup) for signature. A project kick-off call shall then be scheduled."
+- [x] Update purchase completion logic to handle both payment methods
+- [x] Test both payment flows
