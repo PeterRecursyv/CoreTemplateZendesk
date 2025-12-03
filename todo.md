@@ -224,3 +224,9 @@
 - [x] Keep free-text field for custom data type requests
 - [x] Update database schema to store selected data types (added selectedDataTypes JSON field)
 - [x] Test checkbox selection and form submission (validated successfully)
+
+
+## Fix Pricing Display
+- [x] Add "per month" text to selected plan display in purchase flow
+- [x] Test pricing selection to verify fix (all pricing tiers show "per month")
+- [ ] Push changes to GitHub

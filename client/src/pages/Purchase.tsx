@@ -537,7 +537,7 @@ export default function Purchase() {
                         </div>
                         <div className="mt-4">
                           <span className="text-3xl font-bold">${selectedTier.price}</span>
-                          <span className="text-muted-foreground">/{selectedTier.interval}</span>
+                          <span className="text-muted-foreground"> per month</span>
                         </div>
                       </CardHeader>
                       <CardContent>
@@ -641,7 +641,7 @@ export default function Purchase() {
                       </div>
                       <div className="border-t pt-2 mt-2 flex justify-between font-semibold">
                         <span>Total:</span>
-                        <span>${selectedTier?.price}/{selectedTier?.interval}</span>
+                        <span>${selectedTier?.price} per month</span>
                       </div>
                     </div>
                   </div>
